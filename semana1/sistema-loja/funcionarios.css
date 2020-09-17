@@ -1,0 +1,63 @@
+.nome-do-site {
+    background-color: orange ;
+    padding: 50px;
+    text-align: center;
+    color: azure;
+    font-family: Arial, sans-serif;
+    font-size: 2vw;
+    margin: 0%;
+
+}
+.nav-bar {
+    background-color:rgb(243, 217, 161); 
+    text-align: right;
+    color: azure;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 0,5vw;
+    padding: 20px;
+    
+}
+#nav-bar {
+    margin: 1%;
+    text-decoration: none ;
+    color: black;
+    font-weight: bold
+}
+#nav-bar:hover {
+    background-color: rgb(255, 255, 255);
+
+}
+.funcionários {
+    background-color: indigo;
+    padding: 20px;
+    text-align: left;
+    color: azure;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 0,5vw;
+    margin: 0%;
+}
+
+.lista-funcionarios {
+    padding: 20px;
+    color: black;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 0,5vw;
+    margin: 20px;
+
+}
+#itens-lista {
+    margin: 1%;
+    font-weight: bold;
+}
+.rodapé {
+    background-color: rgb(124, 121, 121) ;
+    padding: 20px;
+    text-align: left;
+    color: azure;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 1vw;
+    margin: 0%;
+    Position: fixed;
+    bottom: 0;
+    width: 100vw;
+}

@@ -5,40 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" type="text/css" href="add-produto.css">
 </head>
 <body>
-    <div>
-        <p>Casa da Artista</p>
-    </div>
-    
-    <div>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
+    <div class="nav-bar">
+        <a id="nav-bar" href="index.html">Página Inicial</a>
+        <a id="nav-bar" href="ctrl-estoque.html">Controle de Estoque</a>
+        <a id="nav-bar" href="add-produto.html">Adicionar Produto</a>
+        <a id="nav-bar" href="funcionarios.html">Funcionários</a>
     </div>
 
+    <div>
+        <h1 class= "nome-do-site">Casa da Artista!</h1> 
+    </div>
     
-    <h2>Adicionar Produto</h2>
-    <form action="#">
-        <div>
-            <label for="link-foto">Link para foto: </label>
+    <div>
+    <h2 class="adicionar-produto">Adicionar Produto</h2>
+    </div>
+
+    <form action="#"class="descrição-produto">
+        <div id="descrição">
+            <label for= "link-foto" >Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
         </div>
         
-        <div>
+        <div id="descrição">
             <label for="descricao">Descrição do produto: </label>
             <!-- Adicione o id apropriado para o input abaixo -->
             <input type="text" id="descricao" name="descrição">
         </div>
         
-        <div>
+        <div id="descrição">
             <label for="preco">Preço (em R$): </label>
             <!-- Adicione o id apropriado e o type para receber números abaixo -->
             <input type="number" id="preco" name="preço">
         </div>
         
-        <div>
+        <div id="descrição">
             <!-- Preencha as propriedades necessárias para os elementos abaixo -->
             <label for="quantidade">Quantidade disponível: </label>
             <input type="number" id="quantidade" name="quantidade disponivel">
@@ -51,5 +54,7 @@
 
     </form>
 
+    <div class="rodapé">
+        <p id="siga-nos">Siga-nos nas redes sociais!</p>
 </body>
 </html>

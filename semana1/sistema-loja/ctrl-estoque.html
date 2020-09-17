@@ -5,52 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <link rel="stylesheet" type="text/css" href="ctrl-estoque.css">
 </head>
 <body>
-    <div>
-        <p>Casa da Artista</p>
-    </div>
-    
-    <div>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
+    <div class="nav-bar">
+        <a id="nav-bar" href="index.html">Página Inicial</a>
+        <a id="nav-bar" href="ctrl-estoque.html">Controle de Estoque</a>
+        <a id="nav-bar" href="add-produto.html">Adicionar Produto</a>
+        <a id="nav-bar" href="funcionarios.html">Funcionários</a>
     </div>
 
-    <h2>Controle de Estoque</h2>
+    <div>
+        <h1 class= "nome-do-site">Casa da Artista!</h1> 
+    </div>
+    
+    
+    <h2 class="controle-de-estoque">Controle de Estoque</h2>
 
     <table>
         <tr>
-            <th>Foto</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade disponível</th>
+            <th class="itens-do-estoque">Foto</th>
+            <th class="itens-do-estoque">Descrição</th>
+            <th class="itens-do-estoque">Preço (R$)</th>
+            <th class="itens-do-estoque">Quantidade disponível</th>
         </tr>
 
 
-        <tr>
+        <tr class="estoque" >
             <td><img src="img/pincel.jpg" alt="pincel"/></td>
             <td> Pincel </td>
             <td> R$70,00 </td>
             <td> 50 </td>
         </tr>
 
-        <tr>
+        <tr class="estoque" >
             <td><img src="img/estojo aquarela.jpg" alt="estojo aquarela"/></td>
             <td> Aquarela </td>
             <td> R$130,00 </td>
             <td> 60 </td>
         </tr>
 
-        <tr>
+        <tr class="estoque" >
             <td><img src="img/tela.jpg" alt="tela"/> </td>
             <td> Tela </td>
             <td> R$30,00 </td>
             <td> 100 </td>
         </tr>
         
-        <tr>
+        <tr class="estoque" >
             <td><img src="img/caneta nanquim.jpg" alt="caneta nanquim"/></td>
             <td> Caneta nanquim </td>
             <td> R$20,00 </td>
@@ -58,6 +60,9 @@
         </tr>
 
     </table>
+
+    <div class="rodapé">
+        <p id="siga-nos">Siga-nos nas redes sociais!</p>
 
 </body>
 </html>

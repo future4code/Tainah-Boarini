@@ -1,0 +1,62 @@
+.nome-do-site {
+    background-color: orange ;
+    padding: 50px;
+    text-align: center;
+    color: azure;
+    font-family: Arial, sans-serif;
+    font-size: 2vw;
+    margin: 0%;
+}
+.subtítulo {
+    background-color: gold ;
+    padding: 20px;
+    text-align: center;
+    color:rgb(124, 121, 121);
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 1vw;
+    margin: 0%;
+    font-weight: bold
+}
+.nav-bar {
+    background-color:rgb(243, 217, 161); 
+    text-align: right;
+    color: azure;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 0,5vw;
+    padding: 20px;
+    
+}
+#nav-bar {
+    margin: 1%;
+    text-decoration: none ;
+    color: black;
+    font-weight: bold
+}
+#nav-bar:hover {
+    background-color: rgb(255, 255, 255);
+
+}
+
+.conteudo {
+    background-color:rgb(255, 255, 255); 
+    padding: 10%
+}
+.rodapé {
+    background-color: rgb(124, 121, 121) ;
+    text-align: center;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    color: azure;
+    padding: 20px;
+    font-size: 1vw;
+}
+#siga-nos {
+    
+    margin: 0%;
+
+}
+.ícones {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    }
