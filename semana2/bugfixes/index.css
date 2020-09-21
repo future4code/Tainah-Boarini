@@ -120,9 +120,20 @@ td button {
     background-color:goldenrod;
     
   }
+
+  #comprar-item:active {
+    background-color:white;
+    
+  }
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+}
+
+#campo-search {
+    border: none;
+    border-bottom: 2px solid black;
 }
 
 #lupa {
