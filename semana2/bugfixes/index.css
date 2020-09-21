@@ -113,8 +113,13 @@ td button {
 
 .itens-de-compra {
     text-align: center;
+
 }
 
+#comprar-item:hover {
+    background-color:goldenrod;
+    
+  }
 .container-do-search {
     margin-top: 20px;
     height: 100px;
