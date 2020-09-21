@@ -120,6 +120,9 @@ td button {
     height: 100px;
 }
 
+#lupa {
+    width: auto;
+}
 
 #back-button {
     background-color: white;
