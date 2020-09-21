@@ -111,6 +111,10 @@ td button {
     color: black;
 }
 
+.itens-de-compra {
+    text-align: center;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
