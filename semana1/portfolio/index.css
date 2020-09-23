@@ -1,0 +1,104 @@
+
+.barra-navegação {
+    background-color:#CE774A; 
+    text-align: right;
+    color: azure;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 0,5vw;
+    margin: 0 auto;
+    
+    
+}
+#nav-bar {
+    margin: 10px 10px;
+    text-decoration: none ;
+    color: black;
+    font-weight: bold;
+    
+    
+}
+#nav-bar:hover {
+    color: rgb(255, 255, 255);
+}
+
+.apresentação {
+    width: 100vw;
+    height: 50vh;
+    background-color: #DCD6CA;
+    font-family: Arial, sans-serif;
+    font-size: 0,5vw;
+    color: #8EBAA2;
+}
+
+#foto {
+    width: 100vw;
+    height: auto;
+}
+
+p {
+    color:#8EBAA2;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    right: 50%;
+}
+
+#minha-foto {
+    width: auto;
+    height: auto;
+    left: 80%;
+    position:relative;
+    float: left;
+    display: inline-block;
+}
+.chamada-galeria {
+    background-color:#8EBAA2;
+    color: white;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+.conteudo-galeria {
+    background-color: #F3E1CD;
+    color:#8EBAA2;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding: 50px;
+    align-items: center;
+
+}
+
+img {
+   
+        width: 120px;
+        height: 120px;
+        margin: 1px;
+        text-align: center;
+        
+       
+    }
+
+
+
+
+
+
+.rodapé {
+    background-color: rgb(124, 121, 121) ;
+    text-align: center;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    color: azure;
+    padding: 20px;
+    
+}
+#siga-nos {
+    
+    margin: 0%;
+
+}
+#ícone-redes-sociais{
+    width: 20px;
+    height: 20px;
+    margin: 1%;
+    text-align: center;
+    }
