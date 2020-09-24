@@ -1,0 +1,332 @@
+* {
+    padding: 0;
+    margin: 0;
+
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    
+    overflow-x: hidden;
+	
+    
+    
+}
+
+div {
+    border: 1px solid black;
+    display: grid;
+   
+}
+
+/*TELA PARA DESKTOP*/
+
+
+.red-block {
+    background-color: red;
+    border: none;
+    padding: 3rem;
+    margin: 0px;
+}
+
+    #first-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border: none;
+        width: 100vw;
+    }
+
+    #second-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;    
+        border: none;
+        width: 100vw;
+
+    }
+
+    #third-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;    
+        border: none;
+        width: 100vw;
+    }
+
+
+
+    
+    .blue-block {
+        background-color: blue;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        margin: 1em;
+        
+    }
+    
+    .yellow-block {
+        background-color: yellow;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        padding: 3rem;
+        margin: 1em;
+    }
+    
+    .green-block3 {
+        background-color: green;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        padding: 3rem;
+        margin: 1em;
+    }
+    
+    .green-block6 {
+        background-color: green;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        padding: 3rem;
+        margin: 1em;
+    }
+
+    .black-block {
+        background-color: black;
+        color: white;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        padding: 12rem;
+        margin: 1em;
+    }
+    
+    .white-block {
+        background-color: white;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        padding: 3rem;
+        margin: 1em;
+    }
+
+    .white-block11 {
+        background-color: white;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        padding: 3rem;
+        margin: 1em;
+    }
+
+/*TELA PARA ipad*/
+
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+    .red-block {
+        background-color: red;
+        border: none;
+        padding: 3rem;
+        margin: 0px;
+    }
+    
+        #first-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: none;
+            width: 100vw;
+        }
+        
+        
+
+        #second-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;    
+            border: none;
+            width: 100vw;
+    
+        }
+    
+        #third-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;    
+            border: none;
+            width: 100vw;
+        }
+    
+    
+    
+        
+        .blue-block {
+            background-color: blue;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            margin: 1em;
+            
+        }
+        
+        .yellow-block {
+            background-color: yellow;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            padding: 3rem;
+            margin: 1em;
+        }
+        
+        .green-block3 {
+            background-color: green;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            padding: 3rem;
+            margin: 1em;
+            grid-column-start: 1; grid-column-end: 3;
+            
+        }
+
+        .green-block6 {
+            background-color: green;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            padding: 3rem;
+            margin: 1em;
+            grid-column-start: 1; grid-column-end: 3;
+        }
+        
+        .black-block {
+            background-color: black;
+            color: white;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            padding: 8rem 3rem;
+            margin: 1em;
+        }
+        
+        .white-block {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            padding: 3rem;
+            margin: 1em;
+            
+        }
+
+        .white-block11 {
+            background-color: white;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            padding: 3rem;
+            margin: 1em;
+            grid-column-start: 1; grid-column-end: 4;
+        }
+
+}
+
+/*TELA PARA CELULARES*/
+
+@media screen and (max-device-width : 420px) {
+
+#red-block {
+    background-color: red;
+    display: grid;
+    padding: 3rem;
+    border: none;
+}
+
+#first-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: none;
+    width: 100vw;
+}
+
+#second-block {
+    display: grid;
+    grid-template-columns: 1fr;    
+    border: none;
+    width: 100vw;
+
+}
+
+#third-block {
+    display: grid;
+    grid-template-columns: 1fr;    
+    border: none;
+    width: 100vw;
+}
+ 
+.blue-block {
+    background-color: blue;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem;
+    margin: 1em;
+    
+}
+
+.yellow-block {
+    background-color: yellow;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem;
+    margin: 1em;
+}
+
+.green-block3 {
+    background-color: green;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem;
+    margin: 1em;
+    
+    
+}
+
+.green-block6 {
+    background-color: green;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem;
+    margin: 1em;
+    
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem;
+    margin: 1em;
+}
+
+.white-block {
+    background-color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem;
+    margin: 1em;
+}
+
+.white-block11 {
+    background-color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem;
+    margin: 1em;
+}
+
+}
