@@ -1,0 +1,197 @@
+/*TELA PARA DESKTOP*/
+
+@media screen and (min-device-width : 900px) {
+
+* {
+    margin: 0;
+    
+}
+
+header {
+    background-color: #592411;
+    color: white;
+    position: fixed;
+    width: 100vw;    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+nav {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+
+}
+
+p {
+    color: black;
+    font-size: 20px;
+}
+
+#logotipo {
+    display: flex;
+    justify-content: start;
+    padding: 0 3em;
+    
+}
+
+ul {
+    list-style-type:none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 3em;
+}
+
+li {
+    display: flex;
+    padding: 0 1em;
+}
+
+article {
+    padding: 6em ;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    
+}    
+   
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content:space-evenly;
+}
+      
+ .flex-container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 4em;
+ }
+
+#item2 {
+    padding: 5em;
+    text-align: center;
+    font-size: 30px;
+    color: #592411; 
+    
+}
+
+.item3 {
+    width: 30vw;
+    height: 19vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flex-container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #F2F2F2;
+        
+ }
+
+ #item4 {
+    width: 30vw;
+    height: auto;
+    padding: 3em;
+    text-align: center;
+    font-size: 30px;
+    color: #592411;
+ }
+
+
+ footer {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    background-color: #BFB0AA;
+    padding: 2em 0;
+    
+}
+
+.ícones {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    text-align: center;
+    }
+
+}
+
+    /*TELA PARA ipad*/
+
+    @media screen and (min-device-width : 270px) and (max-device-width : 899px) {
+
+    * {
+    margin: 0;
+    
+    }
+    
+    header {
+    background-color: #592411;
+    color: white;
+    position: fixed;
+    border: none;
+    
+    margin: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    }
+    
+    nav {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+  
+    }      
+
+
+
+p {
+    color: black;
+    font-size: 3em;
+}
+
+#logotipo {
+    display: flex;
+    justify-content: start;
+    padding: 0 3em;
+    
+}
+
+ul {
+    list-style-type:none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 3em;
+}
+
+li {
+    display: flex;
+    padding: 0 1em;
+}
+
+footer {
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    background-color: #BFB0AA;
+    border: none;
+    padding: 3rem;
+    width: 100vh;
+    
+}
+
+.ícones {
+    width: 2em;
+    height: 2em;
+    margin: 10px;
+    text-align: center;
+    
+    }
+
+}
