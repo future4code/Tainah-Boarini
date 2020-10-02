@@ -121,7 +121,7 @@ div {
         margin: 1em;
     }
 
-/*TELA PARA ipad*/
+/*TELA PARA iphone*/
 
 @media screen and (min-device-width : 421px) and (max-device-width : 800px) {
     .red-block {
