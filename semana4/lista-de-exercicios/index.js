@@ -40,12 +40,12 @@
 
 //FOR
 
-const sacolaCompras = ["bananinha", "nescau", "alcool", "agua"]
+// const sacolaCompras = ["bananinha", "nescau", "alcool", "agua"]
 
-    for(let indice = 0; indice < sacolaCompras.length; indice ++) {
-        const itemEscolhido = sacolaCompras[indice]
-        console.log(itemEscolhido)
-    }
+//     for(let indice = 0; indice < sacolaCompras.length; indice ++) {
+//         const itemEscolhido = sacolaCompras[indice]
+//         console.log(itemEscolhido)
+//     }
 
 
 //2. Sem rodar nenhum código, diga quais são os valores das expressões lógicas abaixo:
@@ -64,4 +64,27 @@ const sacolaCompras = ["bananinha", "nescau", "alcool", "agua"]
 // d) `!(booleano2 && booleano3) || !(booleano1 && booleano3)` =====> !(false || true) || !(true || true) ======> !(true) || !(true) ======> (false) || (false) ======> Resultado final: false
 
 // e) `!(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)` =====> !(true) && !(true) || (!false && true && true) ======> (false) && (false) || (true && true && true) ======> Resultado final: true
+
+
+//3. Você tem que escrever um código que, dado um número N, ele imprima (no console) os N primeiros números pares (por exemplo, se N for 3, você deve imprimir 0, 2 e 4; se N for 5, deve imprimir 0, 2, 4, 6 e 8).
+// Um colega seu disse que já começou esta tarefa, mas não conseguiu terminar. Dê uma olhada no código dele:
+
+// const quantidadeDeNumerosPares
+// let i = 0
+// while(i <= quantidadeDeNumerosPares) {
+//   console.log(i*2)
+// }
+
+//Este código funciona? Por quê? Caso não funcione, corrija a implementação dele.
+//Não funciona porque faltou a soma de + 1 número da variavel 'i' pra que o loop consiga ser completado. E também um número (ou um conjunto de números) na variável 'quantidadeDeNumerosPares' para que a variável i chegue até o número menor ou igual 
+//da variável 'quantidadeDeNumerosPares'. Por exemplo:
+
+const quantidadeDeNumerosPares = 10
+let i = 0
+while(i <= quantidadeDeNumerosPares) {
+  console.log(i*2)
+  i++
+}
+
+//no final aparecerá o resultado de 11 números menores ou igual a 10 multiplicados por 2
 
