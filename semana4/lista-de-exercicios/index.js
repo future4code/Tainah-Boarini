@@ -33,3 +33,17 @@
 // A segunda condição é para determinar o maior valor do array da variável 'numeros', uma vez que sempre o numero maior substituirá o numero menor.
 // o console.log do número1 irá imprimir portanto, o número -10 e o console.log do número2 irá imprimir 1590.
 
+
+//------------------------------------------------------------------------------------------------------------------ Exercícios de Lógica de Programação ---------------------------------------------------------------------------------------
+
+//1. É possível iterar uma array utilizando a propriedade loop como 'for of', 'while', 'for'. Por exemplo:
+
+//FOR
+
+const sacolaCompras = ["bananinha", "nescau", "alcool", "agua"]
+
+    for(let indice = 0; indice < sacolaCompras.length; indice ++) {
+        const itemEscolhido = sacolaCompras[indice]
+        console.log(itemEscolhido)
+    }
+
