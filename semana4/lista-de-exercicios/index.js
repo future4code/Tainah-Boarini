@@ -47,3 +47,21 @@ const sacolaCompras = ["bananinha", "nescau", "alcool", "agua"]
         console.log(itemEscolhido)
     }
 
+
+//2. Sem rodar nenhum código, diga quais são os valores das expressões lógicas abaixo:
+
+// const booleano1 = true
+// const booleano2 = false
+// const booleano3 = !booleano2 ===> true
+// const booleano4 = !booleano3  ====> false
+
+// a) `booleano1 && booleano2 && !booleano4` ======> true && false && true ======> Resultado final: false
+
+// b) `(booleano1 && booleano2) || !booleano3` ======> (true && false) || false ======> Resultado final: false
+
+// c)  `(booleano2 || booleano3) && (booleano4 || booleano1)` =====> (false || true) && (false || true) ======> Resultado final: true
+
+// d) `!(booleano2 && booleano3) || !(booleano1 && booleano3)` =====> !(false || true) || !(true || true) ======> !(true) || !(true) ======> (false) || (false) ======> Resultado final: false
+
+// e) `!(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)` =====> !(true) && !(true) || (!false && true && true) ======> (false) && (false) || (true && true && true) ======> Resultado final: true
+
