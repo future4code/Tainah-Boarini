@@ -25,3 +25,11 @@
 // Após o loop, o primeiro console irá imprimir >> "Quantidade total de números, 'elemento.length'(quantidade de elementos dentro da array)"
 // no segundo console, irá imprimir a quantidade de elementos contidos na array da variável array1 (ou seja, quantidade de números pares)
 // no terceiro console, irá imprimir a quantidade de elementos contidos na array da variável array2 (ou seja, quantidade de elementos diferentes de pares)
+
+
+//4. ----------- Aqui temos 3 variaveis. A primeira é uma array de números, a variável 'numero1' equivale a quantidade infinito e a variável 'numero2' equivale a zero.
+// Em seguida vai rodar um loop dentro da array da variável 'numeros' com duas condições true (representadas pelo 'if')
+// A primeira condição é para determinar o menor valor do array da variável 'numeros', uma vez que sempre o numero menor substituirá o numero maior.
+// A segunda condição é para determinar o maior valor do array da variável 'numeros', uma vez que sempre o numero maior substituirá o numero menor.
+// o console.log do número1 irá imprimir portanto, o número -10 e o console.log do número2 irá imprimir 1590.
+
