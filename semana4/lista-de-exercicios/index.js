@@ -92,14 +92,19 @@
 //Se um triângulo possuir os três lados iguais, ele é chamado de "Equilátero". Se possuir, dois (e somente 2) lados iguais, diz-se que ele é "Isósceles". Se os três lados tiverem medidas diferentes, ele é "Escaleno". Faça uma função que receba como parâmetro
 //os tamanhos dos três lados do triângulo: a, b, c  e retorne se ele é equilátero, isósceles ou escaleno.
 
-function trigonometria(a, b, c) {
-    if(a === c || b === c){
-        console.log("É um triângulo Equilátero")
-    } else if(a === c || b === c || a === b){
-        console.log("É um triângulo Isósceles")
-    } else {
-        console.log("É um triângulo Escaleno")
-    }
-}
+// function trigonometria(a, b, c) {
+//     if(a === c || b === c){
+//         console.log("É um triângulo Equilátero")
+//     } else if(a === c || b === c || a === b){
+//         console.log("É um triângulo Isósceles")
+//     } else {
+//         console.log("É um triângulo Escaleno")
+//     }
+// }
 
-trigonometria(10, 10, 10)
+// trigonometria(10, 10, 10)
+
+//5. Faça um programa que, dados dois números,
+//i. indique qual é o maior,
+// ii. determine se eles são divisíveis um pelo outro (use o operador `%`) e
+// iii. determine a diferença entre eles (o resultado deve ser um número positivo sempre)
