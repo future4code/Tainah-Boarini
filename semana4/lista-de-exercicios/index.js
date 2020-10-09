@@ -17,3 +17,11 @@
 // Na variável abaixo, 'segundoMontante', será ativada a função acima substituindo os parâmetros 'tipoDeInvestimento' e 'valor' por 'Tesouro Direto e '200'. 
 // No console.log do novoMontante aparecerá o resultado de 150*1.1 >> 165
 // No console.log do segundoMontante aparecerá o resultado "TIPO E INVESTIMENTO INFORMADO INCORRETO!" 
+
+//3. ----------- Aqui temos 3 variaveis. A primeira é uma array de números e as outras duas estão, a princípio, com arrays vazias.
+// Em seguida há um loop For Of que vai percorrer todos os elementos da array da vaiável 'numeros' e as condições para inserir os elementos da array 'numeros' nas arrays das variáveis 'array1' e 'array2' é:
+// se o elemento for dividido por dois e o resto for zero (elemento par), então insira (push) esse elemento (numero) na array da variavel array1
+// Caso contrário (else) insira (push) esse elemento (numero) na variavel da array 2.
+// Após o loop, o primeiro console irá imprimir >> "Quantidade total de números, 'elemento.length'(quantidade de elementos dentro da array)"
+// no segundo console, irá imprimir a quantidade de elementos contidos na array da variável array1 (ou seja, quantidade de números pares)
+// no terceiro console, irá imprimir a quantidade de elementos contidos na array da variável array2 (ou seja, quantidade de elementos diferentes de pares)
