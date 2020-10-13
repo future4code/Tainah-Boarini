@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import logoYT from './logoYT.png'
+
 
 function App() {
   const titulo = "Titulo do vídeo"
@@ -13,7 +15,7 @@ function App() {
     <div>
           <div className="tela-inteira">
         <header>
-            <h1>Lab Tube</h1>
+            <h1><img src={logoYT} />Lab Tube</h1>
             <input type="text" placeholder="Busca" id="campoDeBusca" />
         </header>
 
