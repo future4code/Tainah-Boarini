@@ -1,0 +1,15 @@
+.image-button-container {
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 138, 156);
+    border-radius: 50px;
+    width: 200px;
+    padding: 15px 30px;
+    margin: 60px auto;
+    color: white;
+}
+
+.image-button-container > img {
+    width: 30px;
+    margin-right: 10px;
+}
