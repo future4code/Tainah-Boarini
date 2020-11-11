@@ -30,13 +30,7 @@ export const Header = styled.div `
     height: 60px;
     background-color:#753192;
     border-top-right-radius: 10px;
-    border-top-left-radius: 10px;    
-`;
-
-export const Img = styled.img`
-    display:flex;
-    align-items: center;
-    justify-content: center;
+    border-top-left-radius: 10px;   
 `;
 
 export const Footer = styled.div`
@@ -52,10 +46,32 @@ export const Footer = styled.div`
     border-bottom-left-radius: 10px; 
 `;
 
-export const Button = styled.button`
-    
+export const Button = styled.button`    
     border-radius: 90px;
     width: 70px;
     height: 70px;
+    border: none;
+    margin: 15px 30px;
+    cursor: pointer;
+    &:hover {
+        background-color: #753192;
+        color: white;
+    }
 `;
 
+export const ContainerCard = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    margin-top: auto;
+    width: 100%;   
+    font-family: arial;
+`;
+
+export const Img = styled.img`
+    width: 50%;
+`;
+
+export const Bio = styled.p`
+    width: 90%;
+`;

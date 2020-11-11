@@ -1,9 +1,9 @@
 import React, {useState, useEffects} from "react";
-import './App.css';
-
 import MatchScreen from "./components/MatchScreen";
 
 function App() {
+  // const [currentPage, setCurrentPage] = useState("home")
+
   return (
     <div>
         <p>
