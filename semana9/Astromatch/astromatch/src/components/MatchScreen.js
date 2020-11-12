@@ -1,68 +1,60 @@
 import React, { useEffect, useState } from "react";
-import {Card, Container, Header, Footer, Button, ContainerCard, Img, Bio} from "./styled";
+import {Card, Container, Header, ContainerCard, IconReturn, ImgMatches, ContainerMatches, ButtonClear, Logo} from "./styled";
 import axios from "axios";
+import leftArrow from "../img/leftArrow.png"
+import Logotipo from "../img/logoAstromatch.png"
 
-function MatchScreen() {
-  const [profile, setProfile] = useState({});
-  // const [match, setMatch] = useState("false")
+function MatchScreen(props) {
+  const [profileMatch, setProfileMatch] = useState([]);
+  
 
-  const baseUrl = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/tainah/person"
+  const baseUrl = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/tainah/matches"
 
   useEffect(() => {
-    get()
+    getMatches()
   },[] )
 
-    const get = () => {
+    const getMatches = () => {
       axios
     .get(baseUrl)
     .then((response) => {
-      setProfile(response.data.profile);
+      setProfileMatch(response.data.matches)
     })
     .catch((error) => {
       console.log(error)
     })
     }
+    
+    const baseUrlClear = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/tainah/clear"
 
-    const likeMatch = (boolean) => {
-      const body = {
-        id: profile.id,
-        choice: boolean 
-      };
-      
-      const axiosUrl = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/tainah/choose-person"
-      
+    const putClear = () => {
       axios
-        .post(axiosUrl, body)
-        .then((response) => {
-          get()
-        }) 
-        .catch((error) => {
-          console.log(error.message)
-        })
-    }
-
-    if (profile) {
-      console.log("ainda há perfil")
-    } else {
-      alert("os perfis acabaram")
+      .put(baseUrlClear)
+      .then((response) => {
+        getMatches()
+        alert("limpou")
+      })
     }
 
     return(
       <Container>
         <Card>
-         <Header>
-            astromatch
-         </Header>
-         <ContainerCard>           
-            <Img src={profile.photo} alt={profile.name}/>
-            <h3>{profile.name}, {profile.age}</h3>
-            <Bio>{profile.bio}</Bio>
-         </ContainerCard>          
-         <Footer>
-            <Button onClick={() => likeMatch(false)}>X</Button>
-            <Button onClick={() => likeMatch(true)}>♥️</Button>
-         </Footer>                      
+          <Header>
+            <IconReturn src={leftArrow} alt={"voltar"} onClick={props.goHome}/>
+            <Logo src={Logotipo} />
+          </Header>
+          <ContainerCard>           
+            {profileMatch.map((profile) =>{
+              return (
+                  <ContainerMatches key={profile.id}>
+                    <ImgMatches src={profile.photo} alt={profile.name}/> 
+                    <p>{profile.name}</p>
+                  </ContainerMatches>
+                  )
+            })}              
+          </ContainerCard>                            
         </Card>
+          <ButtonClear onClick={putClear}>Limpar Matches</ButtonClear>  
       </Container>  
     )
 }

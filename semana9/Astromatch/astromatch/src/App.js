@@ -1,16 +1,24 @@
-import React, {useState, useEffects} from "react";
+import React, {useState} from "react";
+import Home from "./components/Home";
 import MatchScreen from "./components/MatchScreen";
+import {Container} from "./components/styled";
 
 function App() {
-  // const [currentPage, setCurrentPage] = useState("home")
+  const [currentPage, setCurrentPage] = useState(false)
+
+  
+
+  const setPage = () => {
+    setCurrentPage(!currentPage)
+  }
 
   return (
-    <div>
-        <p>
-          <MatchScreen />
-        </p>
-    </div>
+    <Container>
+        {currentPage === true ? <Home goMatchScreen={setPage}/> : <MatchScreen goHome={setPage}/>}
+        
+    </Container>
   );
 }
 
 export default App;
+
