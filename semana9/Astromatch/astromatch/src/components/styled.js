@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import clickDislike from "../img/clickDiscard.png"
 
 //======================================================== General ==============================
 
@@ -54,7 +55,7 @@ export const ContainerCard = styled.div`
 //======================================================== Home ==============================
 
 export const IconHeart = styled.img`
-    display:flex;    
+    display:flex;   
     width:30px;
     margin:380px;
     cursor: pointer;
@@ -74,27 +75,26 @@ export const Bio = styled.p`
 
 export const Footer = styled.div`
     display:flex;
-    position: relative;
     justify-content: space-evenly;
     margin-top: auto;
+    padding-bottom: 30px;
+    padding-top:30px;
     width: 100%;    
     height: 100px;
     justify-content: center;
-    background-color: #4AA397;
+    background-color: #381A4D;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px; 
 `;
 
-export const Button = styled.button`    
-    border-radius: 90px;
+export const Button = styled.img`      
     width: 70px;
-    height: 70px;
-    border: none;
-    margin: 15px 30px;
+    height: 70px;    
+    margin: 15px 80px 10px;
     cursor: pointer;
     &:hover {
-        background-color: #753192;
-        color: white;
+       width: 80px;
+       height: 80px;          
     }
 `;
 
@@ -127,7 +127,7 @@ export const ContainerMatches = styled.div`
 
 export const ButtonClear = styled.button`
     position: fixed;
-    margin-top: 300px;
+    margin-top: 380px;
     background-color: #E7E7E9;
     border: none;
     padding: 20px;

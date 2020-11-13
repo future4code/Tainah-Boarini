@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-import {Card, Container, Header, Footer, Button, ContainerCard, Img, Bio, IconHeart, Logo} from "./styled";
+import {Card, Container, Header, Footer, Button, ContainerCard, Img, Bio, IconHeart, Logo} from "../styled";
 import axios from "axios";
-import iconMatch from "../img/match.png";
-import Logotipo from "../img/logoAstromatch.png"
+import iconMatch from "../../img/match.png";
+import Logotipo from "../../img/logoAstromatch.png"
+import buttonDislike from "../../img/discard.png"
+import buttonLike from "../../img/like.png"
 
 function Home(props) {
   const [profile, setProfile] = useState({});
+  const [like, setLike] = useState(false);
+  const [dislike, setDislike] = useState(false);
 
   const baseUrl = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/tainah/person"
 
@@ -36,10 +40,20 @@ function Home(props) {
         .post(axiosUrl, body)
         .then((response) => {
           get()
+          setLike(false) //setYes
+          setDislike(false) //setNo
         }) 
         .catch((error) => {
           console.log(error.message)
         })
+    }
+
+    const mouseOverIcon = (answer) => {
+      if (answer) {
+        setLike(true)
+      } else {
+        setDislike(true)
+      }
     }
 
     if (profile) {
@@ -61,8 +75,8 @@ function Home(props) {
             <Bio>{profile.bio}</Bio>
          </ContainerCard>          
          <Footer>
-            <Button onClick={() => likeMatch(false)}>X</Button>
-            <Button onClick={() => likeMatch(true)}>♥️</Button>
+            <Button onMouseOver = {() => mouseOverIcon()} onClick={() => likeMatch(false) }/>
+            <Button onMouseOver = {() => mouseOverIcon()} onClick={() => likeMatch(true)}/>
          </Footer>                      
         </Card>
       </Container>  
@@ -70,3 +84,6 @@ function Home(props) {
 }
 
 export default Home
+
+{/* <Button src={buttonDislike} alt={"botão deslike"} onMouseOver = {() => mouseOverIcon()} onClick={() => likeMatch(false) }/>
+            <Button src={buttonLike} alt={"botão de like"} onClick={() => likeMatch(true)}/> */}
