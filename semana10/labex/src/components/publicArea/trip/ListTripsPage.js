@@ -8,7 +8,7 @@ export default function ListTripsPage() {
     //requisição de viagens usando o Get Trips
     const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/tainah-dumont/"
 
-    const getTrips = useRequestData(`${baseUrl}trips`, undefined)
+    const getTrips = useRequestData(`${baseUrl}trips`, undefined )
 
     //Mudanças de páginas com Router
     const history = useHistory();

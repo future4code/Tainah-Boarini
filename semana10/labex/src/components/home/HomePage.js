@@ -12,11 +12,12 @@ const HomePage = () => {
         history.push("/Login")
     }
 
+    
     return (
         <div>
             <p>Home</p>
             <button onClick={goListTripsPage}>Candidate-se à uma viagem!</button>
-            <button onClick={goLogin}>Login</button>
+            <button onClick={goLogin}>Entrar</button>
         </div>
     )
 }
