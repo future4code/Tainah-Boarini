@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import CreateTripPage from "../admArea/CreateTripPage";
-import HomePage from "../home/HomePage";
-import TripDetailsPage from "../admArea/TripDetailsPage";
-import LoginPage from "../admArea/LoginPage";
-import HomeAdm from "../admArea/HomeAdm";
-import FirstLoginPage from "../admArea/FirstLoginPage"
+import CreateTripPage from "../components/admArea/CreateTripPage";
+import HomePage from "../components/home/HomePage";
+import TripDetailsPage from "../components/admArea/TripDetailsPage";
+import LoginPage from "../components/admArea/LoginPage";
+import HomeAdm from "../components/admArea/HomeAdm";
+import FirstLoginPage from "../components/admArea/FirstLoginPage"
 
-import ApplicationFormPage from "../publicArea/ApplicationFormPage";
-import ListTripsPage from "../publicArea/trip/ListTripsPage";
+import ApplicationFormPage from "../components/publicArea/applicationForm/ApplicationFormPage";
+import ListTripsPage from "../components/publicArea/listTrips/ListTripsPage";
 
 export default function Router() {
     return (
