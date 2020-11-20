@@ -1,10 +1,11 @@
 export function Countries(props) {
     return (
         <select 
-        id="country" 
-        name="country" 
-        value={props.country} 
-        onChange={props.handleInputChange}>
+        value={props.country}
+        onChange={props.onChange}
+        name={"country"}
+        placeholder={"País"} 
+       >
             
             <option value="" selected="selected">Selecione seu país</option> 
             <option value="United States">United States</option> 

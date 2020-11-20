@@ -35,8 +35,8 @@ const LoginPage = () => {
         axios
         .post(baseUrl, body)
         .then((res) => {
-            localStorage.setItem("token",res.data.token);
-            history.push("/HomeAdm")
+            // localStorage.setItem("token",res.data.token);
+            history.push("/Login")
             alert("Usuário cadastrado com sucesso!")
         })
         .catch((error) => {

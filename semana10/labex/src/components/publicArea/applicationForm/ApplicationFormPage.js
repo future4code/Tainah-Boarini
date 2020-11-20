@@ -3,10 +3,17 @@ import {useHistory, useParams} from "react-router-dom";
 import {useForm} from "../../../hooks/useForm";
 import axios from "axios";
 import "../../../assets/generalStyle.css";
-import {Countries} from "../../../assets/countries"
+import {Countries} from "../../../assets/countries";
 
 const ApplicationFormPage = () => {
-   const {form, onChange} = useForm({name:"", age:"", applicationText:"", profession:""})
+   const {form, onChange,resetState} = useForm({
+       name:"", 
+       age:0, 
+       applicationText:"", 
+       profession:"", 
+       country:"",
+       tripId: ""
+    })
        
     const history = useHistory();
     const pathParams = useParams();
@@ -43,32 +50,38 @@ const ApplicationFormPage = () => {
         axios
         .post(baseUrl, body)
         .then((res) => {
+            alert("Parabéns, você se candidatou!")
             console.log("candidatou-se à viagem")
+            resetState()
         })
         .catch((error) => {
             console.log(error)
+            console.log(body)
         })
    }
 
-   
     return (
         <div>
-            <p>Formulário de inscrição</p>
+            <h1>Formulário de inscrição</h1>
             <form onSubmit={onSubmitForm}>
+            <label className="GeneralStyle">Nome:</label>
                 <input 
                     type={"text"}
                     placeholder={"Nome"}
                     value={form.name}
                     onChange={handleInputChange}
                     name={"name"}
+                    pattern={"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ,.?! ]{3,}"}
                     required
                 />
+                <label className="GeneralStyle">Idade:</label>
                 <input 
                     type={"number"}
                     placeholder={"Idade"}
                     value={form.age}
                     onChange={handleInputChange}
                     name={"age"}
+                    min="18"
                     required
                 />
                 <label className="GeneralStyle">Comente a razão da sua viagem com a LabeX</label>
@@ -80,22 +93,26 @@ const ApplicationFormPage = () => {
                     name={"applicationText"}
                     required
                 />
+                <label className="GeneralStyle">Profissão:</label>
                 <input 
                     type={"text"}
                     placeholder={"Profissão"}
                     value={form.profession}
                     onChange={handleInputChange}
                     name={"profession"}
+                    pattern={"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ,.?! ]{10,}"}
                     required
                 />
-                <Countries placeholder={"País"}> 
-                    {/* <option
+                {/* <input 
+                    type={"text"}
                     placeholder={"País"}
                     value={form.country}
+                    onChange={handleInputChange}
                     name={"country"}
                     required
-                    /> */}
-                </Countries>
+                /> */}
+                <label className="GeneralStyle">País:</label>
+                <Countries country={form.country} onChange={handleInputChange}/> 
 
                 <button>Enviar</button>
 

@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import {useHistory} from "react-router-dom";
-import {useInput} from "../../hooks/useInput"
-import axios from "axios"
+import {useForm} from "../../hooks/useForm";
+import axios from "axios";
+import "../../assets/generalStyle.css";
+import {dateFormat} from "../../assets/dateFormat"
 
-//muda as páginas
+
 const CreateTripPage = () => {
-    const [id, setId] = useState("")
-    const [name, handleName] = useInput();
-    const [planet, handlePlanet] = useInput()
-    const [date, handleDate] = useInput()
-    const [description, handleDescription] = useInput()
-    const [duration, setDuration] = useState(null)
+    const stringDate = dateFormat(new Date())
+    const {form, onChange, resetState} = useForm({
+        name:"",
+        planet:"",
+        date: stringDate,
+        description:"",
+        duration: ""
+    })
 
+    //muda as páginas
     const history = useHistory();
 
     const goHome = () => {
@@ -21,48 +26,97 @@ const CreateTripPage = () => {
         history.push("/TripsDetails")
     }
 
-    //input controlado com números
-    const handleDuration = (event) => {
-        setDuration(event.target.value)
+    //hook para inputs controlados
+    const handleInputChange = (event) => {
+        const {value, name} = event.target
+        onChange(value,name)
     }
 
-    //muda o id
-    const idValue = (idValue) => {
-        setId(idValue.data.trip.id)
-    }
-
+    const onSubmitForm = (event) => {
+        event.preventDefault()
+        const{value,name} = event.target;
+        onChange(value,name)
+    
     //Pega API de login postSignUp
     const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/tainah-dumont/trips"
     
-    const addTrips = () => {
         const body ={
-            id:id,
-            name: name,
-            planet: planet,
-            date: date,
-            description: description,
-            durationInDays: duration,
+            id:"",
+            name: form.name,
+            planet: form.planet,
+            date: form.date,
+            description: form.description,
+            durationInDays: form.duration,
         };
 
         axios
-        .post(baseUrl, body)
+        .post(baseUrl, body, 
+            {headers: {
+                auth: localStorage.getItem("token")
+            }})
+
         .then((res) => {
-            console.log(res)
+            console.log("adicionou viagem")
+            alert("Viagem adicionada!")
+            resetState()
         })
         .catch((error) => {
             console.log(error)
         })
     }
+
     return (
         <div>
-            <p>Adicionar novas viagens</p>
+            <h1>Adicionar novas viagens</h1>
 
-            <input value={name} placeholder="Nome da viagem" onChange={handleName}/>
-            <input value={planet} placeholder="Nome do planeta" onChange={handlePlanet}/>
-            <input value={date} placeholder="__/__/___" onChange={handleDate}/>
-            <input value={description} placeholder="Descrição" onChange={handleDescription}/>
-            <input value={duration} placeholder="Dias" onChange={handleDuration}/>
-            <button onClick={addTrips}>Adicionar viagem</button>
+            <form onSubmit={onSubmitForm}>
+                <label className="GeneralStyle">Nome da viagem:</label>
+                <input 
+                type={"text"}
+                value={form.name}
+                name={"name"} 
+                placeholder="Nome da viagem" 
+                onChange={handleInputChange}
+                />
+
+                <label className="GeneralStyle">Planeta de destino:</label>
+                <input 
+                type={"text"}
+                value={form.planet} 
+                name={"planet"}
+                placeholder="Nome do planeta" 
+                onChange={handleInputChange}
+                />
+
+                <label className="GeneralStyle">Data:</label>
+                <input 
+                type={"date"}
+                value={form.date} 
+                name={"date"}
+                onChange={handleInputChange}
+                />
+
+                <label className="GeneralStyle">Descrição da viagem:</label>
+                <input 
+                type={"text"}
+                value={form.description} 
+                name={"description"}
+                placeholder="Descrição" 
+                onChange={handleInputChange}
+                />
+
+                <label className="GeneralStyle">Duração:</label>
+                <input 
+                type={"number"}
+                value={form.duration}
+                name={"duration"} 
+                placeholder="Dias" 
+                onChange={handleInputChange}
+                />
+
+                <button>Adicionar viagem</button>
+
+            </form>
 
             <button onClick={goHome}>Home</button>
             <button onClick={goTripDetails}>Administrar Rotas</button>

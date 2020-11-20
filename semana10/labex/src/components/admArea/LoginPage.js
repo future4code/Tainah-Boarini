@@ -9,9 +9,10 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
     const history = useHistory();
     // useProtectedPage()
-
+    const token = localStorage.getItem("token");
+    
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        // const token = localStorage.getItem("token");
 
         if(token) {
             history.push("/HomeAdm")
@@ -42,7 +43,7 @@ const LoginPage = () => {
     const login = () => {
         const body ={
             email: email,
-            password: password
+            password: password  
         };
 
         axios
