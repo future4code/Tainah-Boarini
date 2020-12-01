@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from '../../hooks/useForm';
 import { signUp } from '../../services/signUp';
-import { Logo, LoginContainer, Form, Input, ButtonLogin, ButtonSignUp, ContainerPage } from './styled';
+import { Logo, SignUpContainer, Form, Input, ButtonSignUp, ContainerPage } from './styled';
 import logo from "../../assets/labeddit.png"
 import { useHistory } from 'react-router-dom';
 import { useUnprotectPage } from '../../hooks/useUnprotectPage';
@@ -16,15 +16,16 @@ export default function SignUpPage() {
         signUp(form, history)
     }
 
+
     return (
         <ContainerPage>
-            <LoginContainer>
+            <SignUpContainer>
                 <Logo src={logo} />
                 <Form onSubmit={handleLogin}>
                     <Input
                         type={'text'}
                         value={form.username}
-                        name={'name'}
+                        name={'username'}
                         placeholder={'Nome Completo'}
                         onChange={onChange}
                         required
@@ -45,10 +46,10 @@ export default function SignUpPage() {
                         onChange={onChange}
                         required
                     />
-                    <ButtonLogin>Cadastrar</ButtonLogin>
+                    <ButtonSignUp>Cadastrar</ButtonSignUp>
 
                 </Form>
-            </LoginContainer>
+            </SignUpContainer>
         </ContainerPage>
     );
 }

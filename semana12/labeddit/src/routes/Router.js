@@ -8,8 +8,8 @@ import FeedPage from "../screens/FeedPage/FeedPage"
 import PostPage from "../screens/PostPage/PostPage"
 import ErrorPage from "../screens/ErrorPage/ErrorPage"
 import MainAppBar from "../components/MainAppBar"
+import DetailPage from "../screens/FeedPage/DetailsPage"
 
-import { themeProvider } from "@material-ui/core"
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -31,6 +31,9 @@ const Router = () => {
                 </Route>
                 <Route exact path={"/feedPage"}>
                     <FeedPage/>
+                </Route>
+                <Route exact path={"/details/:id"}>
+                    <DetailPage/>
                 </Route>
                 <Route exact path={"/postPage"}>
                     <PostPage/>

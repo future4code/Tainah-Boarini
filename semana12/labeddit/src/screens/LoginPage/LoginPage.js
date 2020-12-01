@@ -4,7 +4,7 @@ import { Logo, LoginContainer, Form, Input, ButtonLogin, ButtonSignUp, Container
 import logo from "../../assets/labeddit.png"
 import { useHistory } from 'react-router-dom';
 import { useUnprotectPage } from '../../hooks/useUnprotectPage';
-
+import { goToSignUp } from "../../routes/coordinator"
 
 export default function LoginPage() {
   useUnprotectPage()
@@ -27,7 +27,7 @@ export default function LoginPage() {
             name={'email'}
             placeholder={'E-mail'}
             onChange={onChange}
-            required
+            
           />
           <Input
             type={'password'}
@@ -35,10 +35,10 @@ export default function LoginPage() {
             name={'password'}
             placeholder={'Senha'}
             onChange={onChange}
-            required
+            
           />
           <ButtonLogin>Login</ButtonLogin>
-          <ButtonSignUp>Cadastro</ButtonSignUp>
+          <ButtonSignUp onClick={()=>goToSignUp(history)}>Cadastro</ButtonSignUp>
 
         </Form>
       </LoginContainer>

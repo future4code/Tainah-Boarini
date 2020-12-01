@@ -15,7 +15,7 @@ export const ContainerPage = styled.div`
     width: 95%;
   }
 `
-export const LoginContainer = styled.div`
+export const SignUpContainer = styled.div`
   width: 60%;
   height: 330px;
   padding: 10px;
@@ -62,7 +62,7 @@ export const Input = styled.input`
     border: none;
   }
 `
-export const ButtonLogin = styled.button`
+export const ButtonSignUp = styled.button`
   width: 50%;
   height: 45px;
   background-color: #3f51b5;
@@ -79,29 +79,6 @@ export const ButtonLogin = styled.button`
   &:hover {
     color: black;
     background-color: #757de8;
-  }
-  @media(max-width: 400px) {
-    width: 90%;
-    border: none;
-  }
-`
-export const ButtonSignUp = styled.button`
-  width: 50%;
-  height: 45px;  
-  color: #3f51b5;
-  font-size: 22px;
-  font-weight: bold;
-  padding: 5px 0;
-  margin-top: 32px;
-  border-radius: 90px;
-  outline: none;
-  border: none;
-  background-color:white;
-  transition: all 0,3s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    color: black;
-    background-color: whitesmoke;
   }
   @media(max-width: 400px) {
     width: 90%;

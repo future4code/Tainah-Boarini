@@ -14,6 +14,6 @@ export const goToPostPage = (history) => {
     history.push('/postPage')
 }
   
-// export const goToRecipeDetail = (history, id) => {
-//     history.push(`/receitas/${id}`)
-// }
+export const goToDetailPage = (history, id) => {
+    history.push(`/details/${id}`)
+}

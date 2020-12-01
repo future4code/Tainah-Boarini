@@ -4,7 +4,8 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button';
 import { goToFeedPage, goToLogin } from '../routes/coordinator'
-import {ButtonContainer} from "./styled"
+import {ButtonContainer, Logo} from "./styled"
+import logoB from "../assets/logoBranco.png"
 
 const MainAppBar = () => {
   const history = useHistory()
@@ -13,8 +14,8 @@ const MainAppBar = () => {
         <AppBar>
           <Toolbar>
             <ButtonContainer>
-                <Button onClick={()=>goToFeedPage(history)}>LabEddit</Button> 
-                <Button onClick={()=>goToLogin(history)}>login</Button> 
+                <Logo src={logoB} onClick={()=>goToFeedPage(history)}  /> 
+                <Button onClick={()=>goToLogin(history)}>logout</Button> 
              </ButtonContainer>
           </Toolbar>
         </AppBar>
