@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button';
-import { goToFeedPage } from '../routes/coordinator'
+import { goToFeedPage, goToLogin } from '../routes/coordinator'
+import {ButtonContainer} from "./styled"
 
 const MainAppBar = () => {
   const history = useHistory()
@@ -11,7 +12,10 @@ const MainAppBar = () => {
     return (
         <AppBar>
           <Toolbar>
-          <Button onClick={()=>goToFeedPage(history)}>LabEddit</Button> 
+            <ButtonContainer>
+                <Button onClick={()=>goToFeedPage(history)}>LabEddit</Button> 
+                <Button onClick={()=>goToLogin(history)}>login</Button> 
+             </ButtonContainer>
           </Toolbar>
         </AppBar>
     )
