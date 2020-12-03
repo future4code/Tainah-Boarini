@@ -39,14 +39,6 @@ export const Card = styled.div`
     border: 2px solid #3f51b5;
   }
 `;
-export const CardDetail = styled.div`
-    background-color: #F8F9FA;    
-    display:flex;
-    /* justify-content: center; */
-    justify-content: space-between;
-    height: 80vh;
-    width: 600px;
-`;
 
 export const MainPost = styled.div`
     width: 100%;   
@@ -90,39 +82,10 @@ export const MainContainer = styled.div`
     padding: 15px;
     background-color: #FFFFFF;
 `;
-export const MainContainerDetail = styled.div`
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    max-width: 93%;
-    height: 70%;
-    padding: 10%;
-    background-color: #FFFFFF;
-`;
 export const TextCard = styled.div`
     display:flex;   
     justify-content: center;    
     align-items:center;
     width: 93%;    
     padding-bottom: 40px;
-`;
-
-export const CommentBox = styled.div`
-    display:flex;
-    justify-content: center;    
-    align-items:center;
-    width: 93%;
-    height: 70%;
-    padding: 15px;
-    background-color: #FFFFFF;
-`;
-
-//comentarios
-
-export const Comments = styled.div`
-display:flex;
-justify-content: center;    
-padding: 15px;
-background-color: #FFFFFF;
-width:100%;
 `;

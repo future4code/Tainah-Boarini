@@ -8,7 +8,7 @@ import FeedPage from "../screens/FeedPage/FeedPage"
 import PostPage from "../screens/PostPage/PostPage"
 import ErrorPage from "../screens/ErrorPage/ErrorPage"
 import MainAppBar from "../components/MainAppBar"
-import DetailPage from "../screens/FeedPage/DetailsPage"
+import DetailPage from "../screens/DetailsPage/DetailsPage"
 
 import styled from 'styled-components'
 

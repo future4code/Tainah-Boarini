@@ -1,5 +1,5 @@
 import React from "react"
-import { Comments, Container, ButtonStyled, TextCard, TextFieldStyled, UpDown, Title, MainContainerDetail, CardDetail, CardContainer, MainPost, Icon, Form, Input } from "./styled"
+import { IconComments, UpDownComments, BoxMainComments, TitleComments, MainComments, ContainerComments, Container, ButtonStyled, TextCard, TextFieldStyled, UpDown, Title, MainContainerDetail, CardDetail, CardContainer, MainPost, Icon, Form, Input } from "../DetailsPage/styled"
 import upArrow from "../../assets/upArrow.png"
 import downArrow from "../../assets/downArrow.png"
 import useRequestData from "../../hooks/useRequest"
@@ -14,6 +14,7 @@ const DetailsPage = () => {
     useProtectPage()
     const params = useParams()
     const data = useRequestData(undefined, `${BASE_URL}/posts/${params.id}`)
+    console.log("data", data)
 
     const { form, onChange, reset } = useForm({ text: "" });
 
@@ -23,6 +24,7 @@ const DetailsPage = () => {
         commentBox(form, params.id)
         reset()
     }
+
 
     return (
         <Container>
@@ -44,7 +46,7 @@ const DetailsPage = () => {
                                 <TextCard>
                                     {data.post.text}
                                 </TextCard>
-                                <form onSubmit={handleCommentBox}>
+                                <Form onSubmit={handleCommentBox}>
                                     <TextFieldStyled
                                         id="standard-name"
                                         variant="outlined"
@@ -54,10 +56,29 @@ const DetailsPage = () => {
                                         name={"text"}
                                     />
                                     <ButtonStyled type={"submit"} size="small" variant="contained" color="primary">Comentar</ButtonStyled>
-                                </form>
-                                <Comments>
-                                    oie
-                                </Comments>
+                                </Form>
+                                
+                                    {data.post.comments.map((item) => {
+                                        return (
+                                            <ContainerComments>
+                                                <UpDownComments>
+                                                    <IconComments src={upArrow} />
+                                                    {item.votesCount}
+                                                    <IconComments src={downArrow} />
+                                                </UpDownComments>
+                                                <BoxMainComments>
+                                                    <TitleComments>
+                                                        {item.username}
+                                                    </TitleComments>
+                                                    <MainComments>
+                                                        {item.text}
+                                                    </MainComments>
+                                                </BoxMainComments>
+                                                </ContainerComments>
+                                        )
+                                    })}
+
+                                
                             </MainContainerDetail>
 
                         </MainPost>
