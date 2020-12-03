@@ -4,7 +4,7 @@ import upArrow from "../../assets/upArrow.png"
 import downArrow from "../../assets/downArrow.png"
 import useRequestData from "../../hooks/useRequest"
 import { BASE_URL } from "../../constants/apiConstants"
-import { CommentBox } from '../../services/commentBox';
+import { commentBox } from '../../services/commentBox';
 //hooks
 import { useHistory } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
@@ -15,14 +15,14 @@ const DetailsPage = () => {
     useProtectPage()
     const params = useParams()
     const data = useRequestData(undefined, `${BASE_URL}/posts/${params.id}`)
-    // const history = useHistory()
 
-    const { form, onChange } = useForm({ text: "" });
-    CommentBox(form)
+    const { form, onChange, reset } = useForm({ text: "" });
 
     const handleCommentBox = (event) => {
         event.preventDefault();
-        
+        //requisição
+        commentBox(form, params.id)
+        reset()
     }
 
     return (
