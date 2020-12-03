@@ -10,14 +10,12 @@ export const TextFieldStyled = styled(TextField)`
     
 `;
 export const ButtonStyled = styled(Button)`
-    margin-top: 30px;     
+    margin-top: 50px;     
 `;
-
-
 //General
 export const Container = styled.div`
     display:flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     width: 100vw;
@@ -26,8 +24,7 @@ export const Container = styled.div`
 `;
 
 export const CardContainer = styled.div`    
-    margin-top: 30px; 
-    
+    margin-top: 30px;     
 `;
 
 export const Card = styled.div`
@@ -47,7 +44,7 @@ export const CardDetail = styled.div`
     display:flex;
     /* justify-content: center; */
     justify-content: space-between;
-    height: 300px;
+    height: 80vh;
     width: 600px;
 `;
 
@@ -80,7 +77,7 @@ export const Title = styled.div`
     justify-content: space-around;
     align-items:center;
     width: 100%;
-    height:20%;
+    height:100px;
     background-color: #FFFFFF;
 `;
 
@@ -89,18 +86,17 @@ export const MainContainer = styled.div`
     justify-content: center;    
     align-items:center;
     width: 93%;
-    height: 70%;
+    height: 55%;
     padding: 15px;
     background-color: #FFFFFF;
 `;
 export const MainContainerDetail = styled.div`
     display:flex;
     flex-direction: column;
-    /* justify-content: center;     */
     align-items:center;
-    width: 93%;
+    max-width: 93%;
     height: 70%;
-    padding: 15px;
+    padding: 10%;
     background-color: #FFFFFF;
 `;
 export const TextCard = styled.div`
@@ -121,3 +117,12 @@ export const CommentBox = styled.div`
     background-color: #FFFFFF;
 `;
 
+//comentarios
+
+export const Comments = styled.div`
+display:flex;
+justify-content: center;    
+padding: 15px;
+background-color: #FFFFFF;
+width:100%;
+`;
