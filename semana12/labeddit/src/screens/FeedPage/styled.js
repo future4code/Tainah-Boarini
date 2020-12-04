@@ -2,17 +2,11 @@ import styled from "styled-components"
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-//material UI
-export const TextFieldStyled = styled(TextField)`
-    width:90%;
-    margin-top:40%;
-    margin-bottom:200%;
-    
-`;
 export const ButtonStyled = styled(Button)`
     margin-top: 50px;     
 `;
-//General
+
+//General ==================================================================================
 export const Container = styled.div`
     display:flex;
     /* justify-content: center; */
@@ -29,8 +23,8 @@ export const CardContainer = styled.div`
 
 export const Card = styled.div`
     background-color: #F8F9FA;    
+    /* background-color: yellow;     */
     display:flex;
-    /* justify-content: center; */
     justify-content: space-between;
     height: 300px;
     width: 600px;
@@ -42,6 +36,7 @@ export const Card = styled.div`
 
 export const MainPost = styled.div`
     width: 100%;   
+    /* background-color: black; */
 `;
 
 export const UpDown = styled.div`
@@ -65,7 +60,7 @@ export const Title = styled.div`
     color: #ADADAD;
     font-weight: bold;
     display:flex;    
-    border-style:black;
+    /* border-style:black; */
     justify-content: space-around;
     align-items:center;
     width: 100%;
@@ -73,13 +68,16 @@ export const Title = styled.div`
     background-color: #FFFFFF;
 `;
 
+//Div de texto e nº de comentários =================================================================
+
 export const MainContainer = styled.div`
     display:flex;
-    justify-content: center;    
-    align-items:center;
-    width: 93%;
-    height: 55%;
+    justify-content: space-around;    
+    flex-direction: column;
+    width: 94%;
+    height: 56%;
     padding: 15px;
+    /* background-color: green; */
     background-color: #FFFFFF;
 `;
 export const TextCard = styled.div`
@@ -88,4 +86,19 @@ export const TextCard = styled.div`
     align-items:center;
     width: 93%;    
     padding-bottom: 40px;
+`;
+export const CommentsCount = styled.div`
+    display:flex;   
+    align-self: flex-end;    
+    margin-top:80px;
+    /* background-color:red; */
+    color: #ADADAD;
+    font-weight: bold;
+`;
+export const Text = styled.div`
+    display:flex;   
+    justify-content: right;    
+    align-items:center;
+    /* background-color: blue; */
+
 `;

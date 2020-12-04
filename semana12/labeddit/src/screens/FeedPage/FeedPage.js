@@ -7,7 +7,7 @@ import { BASE_URL } from "../../constants/apiConstants"
 import { goToDetailPage, goToPostPage } from "../../routes/coordinator"
 import { useHistory } from 'react-router-dom';
 //Estilizações
-import { ButtonStyled, Container, UpDown, Title, MainContainer, Card, CardContainer, MainPost, Icon } from "./styled"
+import { Text, CommentsCount, ButtonStyled, Container, UpDown, Title, MainContainer, Card, CardContainer, MainPost, Icon } from "./styled"
 import upArrow from "../../assets/upArrow.png"
 import downArrow from "../../assets/downArrow.png"
 
@@ -39,8 +39,11 @@ const FeedPage = () => {
                                     <p></p>
                                     {item.title}
                                 </Title>
-                                <MainContainer>{item.text}</MainContainer>
-                                {/* <div>{`${item.comments.lengthw}Comentários`}</div> */}
+                                <MainContainer>
+                                    <Text>{item.text}</Text>
+                                    <CommentsCount>{`${item.commentsCount} Comentários`}</CommentsCount>
+                                </MainContainer>
+                                {/* <CommentsCount>{`${item.commentsCount}Comentários`}</CommentsCount> */}
                             </MainPost>
                         </Card>
                     </CardContainer>

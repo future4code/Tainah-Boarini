@@ -25,10 +25,11 @@ export const DetailsPage = () => {
     const { form, onChange, reset } = useForm({ text: "" });
 
     const handleCommentBox = (event) => {
-        event.preventDefault();
+        event.preventDefault();       
         //requisição
-        commentBox(form, params.id)
-        reset()        
+        commentBox(form, params.id, getData)
+        reset()  
+         
     }
 
     return (

@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 export const ButtonContainer = styled.div`
     display:flex;
-    justify-content: space-evenly;
+    flex-grow: 1;
+    justify-content: space-between;
 `;
 
 export const Logo = styled.img`
