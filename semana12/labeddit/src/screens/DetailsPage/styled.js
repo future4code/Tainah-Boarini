@@ -10,19 +10,20 @@ export const Container = styled.div`
     flex-direction: column;
     width: 100vw;
     min-height:100vh; 
+    max-height: max-content;
     background-color: #DAE0E6;
 `;
 
 export const CardContainer = styled.div`    
-    margin-top: 30px;     
+    margin: 30px;     
 `;
 
 export const CardDetail = styled.div`
     background-color: #F8F9FA;    
     display:flex;
     justify-content: space-between;
-    height: 80vh;
-    width: 600px;
+    min-height:100vh; 
+    width: 600px;    
 `;
 
 export const MainPost = styled.div`
@@ -36,6 +37,7 @@ export const UpDown = styled.div`
     margin: 20px;
     align-items: center;    
     width: 10%;
+    min-height:100vh; 
 `;
 
 export const Icon = styled.img`

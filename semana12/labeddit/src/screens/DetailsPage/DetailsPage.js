@@ -1,30 +1,35 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { IconComments, UpDownComments, BoxMainComments, TitleComments, MainComments, ContainerComments, Container, ButtonStyled, TextCard, TextFieldStyled, UpDown, Title, MainContainerDetail, CardDetail, CardContainer, MainPost, Icon, Form, Input } from "../DetailsPage/styled"
 import upArrow from "../../assets/upArrow.png"
 import downArrow from "../../assets/downArrow.png"
 import useRequestData from "../../hooks/useRequest"
 import { BASE_URL } from "../../constants/apiConstants"
 import { commentBox } from '../../services/commentBox';
+import { vote } from '../../services/vote';
+import { voteComment } from '../../services/voteComment';
 //hooks
 import { useForm } from '../../hooks/useForm';
 import { useProtectPage } from "../../hooks/useProtectPage"
 import { useParams } from "react-router-dom"
 
-const DetailsPage = () => {
-    useProtectPage()
-    const params = useParams()
-    const data = useRequestData(undefined, `${BASE_URL}/posts/${params.id}`)
-    console.log("data", data)
 
+
+export const DetailsPage = () => {
+    useProtectPage()
+    //pega o :id das rotas
+    const params = useParams()
+    //Atualiza os posts
+    const {data, getData} = useRequestData(undefined, `${BASE_URL}/posts/${params.id}`)
+
+    //FORMS
     const { form, onChange, reset } = useForm({ text: "" });
 
     const handleCommentBox = (event) => {
         event.preventDefault();
         //requisição
         commentBox(form, params.id)
-        reset()
+        reset()        
     }
-
 
     return (
         <Container>
@@ -32,9 +37,9 @@ const DetailsPage = () => {
                 <CardContainer>
                     <CardDetail>
                         <UpDown>
-                            <Icon src={upArrow} />
+                            <Icon onClick={()=>vote(1, params.id, getData)} src={upArrow} />
                             {data.post.votesCount}
-                            <Icon src={downArrow} />
+                            <Icon onClick={()=>vote(-1, params.id, getData)} src={downArrow} />
                         </UpDown>
                         <MainPost>
                             <Title>
@@ -62,9 +67,9 @@ const DetailsPage = () => {
                                         return (
                                             <ContainerComments>
                                                 <UpDownComments>
-                                                    <IconComments src={upArrow} />
+                                                    <IconComments onClick={()=>voteComment(1, params.id, item.id, getData)} src={upArrow} />
                                                     {item.votesCount}
-                                                    <IconComments src={downArrow} />
+                                                    <IconComments onClick={()=>voteComment(-1, params.id, item.id, getData)}src={downArrow} />
                                                 </UpDownComments>
                                                 <BoxMainComments>
                                                     <TitleComments>

@@ -29,7 +29,7 @@ const Router = () => {
                 <Route exact path={"/signUp"}>
                     <SignUpPage/>
                 </Route>
-                <Route exact path={"/feedPage"}>
+                <Route exact path={"/feedPage/"}>
                     <FeedPage/>
                 </Route>
                 <Route exact path={"/details/:id"}>
