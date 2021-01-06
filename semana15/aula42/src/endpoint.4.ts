@@ -7,16 +7,20 @@ const app = express();
 app.use(express.json()) //transforma em json
 app.use(cors()) //evita erro de cors
 
-//api pra puxar todos os países
-app.put("/countries/edit/:id", (req: Request, res: Response) => {
+//api para alterar nome do país/capital
+app.put('/countries/edit/:id', (req: Request, res: Response) => {
+    const result = countries.findIndex(
+        country => country.id === Number(req.params.id)
+    )
+    countries[result].name = req.body.name;
+    countries[result].capital = req.body.capital
 
-    const result = countries.map(country => ({
-        name: country.name,
-        capital: country.capital
-        
-    }))
-
-
+    if(result) {
+        res.status(200).send(req.body)
+    } else {
+        res.status(404).send("Not found")
+    }
+})
 
 
 app.listen(3003, () => {
