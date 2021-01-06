@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express"
 import cors from "cors"
-import { countries, country } from "./countries"
+import { countries } from "./countries"
 
 const app = express();
 
