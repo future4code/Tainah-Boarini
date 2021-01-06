@@ -1,7 +1,6 @@
-
-import styled from "styled-components";
-import Post from './components/Post";
 import React from 'react';
+import Post from './components/Post/Post';
+import styled from "styled-components"
 
 const AppContainer = styled.div `
   display: flex;
@@ -13,12 +12,13 @@ const AppContainer = styled.div `
 function App() {
   return (
     <AppContainer>
-      <h1>Hello World!</h1>
-      <Post />
+      <Post
+        nomeUsuario={'Usuário'}
+        fotoUsuario={'https://picsum.photos/50/50?=1'}
+        fotoPost={'https://picsum.photos/200/150?=2'}
+      />        
     </AppContainer>
-
   );
 }
 
 export default App;
-
