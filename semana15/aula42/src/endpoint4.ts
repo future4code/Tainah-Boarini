@@ -23,6 +23,6 @@ app.put('/countries/edit/:id', (req: Request, res: Response) => {
 })
 
 
-app.listen(3003, () => {
-    console.log("Server is running in http://localhost:3003")
+app.listen(3000, () => {
+    console.log("Server is running in http://localhost:3000")
 })//porta para iniciar o servidor onde o código vai rodar
