@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 import Post from './components/Post";
 import React from 'react';
@@ -15,7 +16,9 @@ function App() {
       <h1>Hello World!</h1>
       <Post />
     </AppContainer>
+
   );
 }
 
 export default App;
+
