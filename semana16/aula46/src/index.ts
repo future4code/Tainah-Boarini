@@ -28,19 +28,19 @@ const connection = knex({
 
 /**************************************************************/
 
-// app.get('/', testEndpoint)
+app.get('/', testEndpoint)
 
-// async function testEndpoint(req: Request, res: Response): Promise<void> {
-//    try {
-//       const result = await connection.raw(`
-//        SELECT * FROM Actor
-//      `)
+async function testEndpoint(req: Request, res: Response): Promise<void> {
+   try {
+      const result = await connection.raw(`
+       SELECT * FROM Actor
+     `)
 
-//       res.status(200).send(result)
-//    } catch (error) {
-//       res.status(400).send(error.message)
-//    }
-// }
+      res.status(200).send(result)
+   } catch (error) {
+      res.status(400).send(error.message)
+   }
+}
 
 //EXERCICIO 1 LETRA A.
 // const getActorById = async (id: string): Promise<any> => {
@@ -105,32 +105,35 @@ const connection = knex({
 // })
 
 //EXERCICIO 2 A ===================== BUILDER =====================
-const createSalary = async (id: string, salary: number,): Promise<any> => {
-   
-   try {
+const updateSalary = async (id: string, salary: number,): Promise<any> => {
+
+   const newSalary = Number(salary)
+
+   try{
+
       await connection("Actor")
       .update({
-         salary: salary
+         salary: newSalary,
       })
-      .where({id});
+      .where("id", id);
       console.log("salário alterado")
 
    } catch (error) {
-      throw new Error(error.sqlMessage || error.message)
+      throw new Error(error.sqlMessage || error.message);
    }
+   
  };
 
  app.put("/updateSalary", async (req: Request, res:Response) => {
     
    try {
 
-      const id = req.body.id as string
-      const salary = req.body.salary as number
-      const updateSalary: any = await createSalary(id, salary)
+      const id = req.body.id 
+      const salary = req.body.salary
+      
+      await updateSalary(id, salary);
 
-      constants
-
-      res.status(200).send({CriarSalario: updateSalary})
+      res.status(200).send("Salário atualizado")
 
    } catch(error) {
       res.status(400).end
