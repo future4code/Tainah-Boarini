@@ -148,7 +148,16 @@ ADD COLUMN playing_limit_date
 VARCHAR(255); 
 ```
 
+* b. Altere a tabela de Movie para que o parâmetro rating possa aceitar valores não inteiros, como, por exemplo, uma avaliação 8.5.
 ```sh
+ALTER TABLE Movie
+CHANGE rating rating FLOAT;
+```
+
+* c. Atualize dois filmes de tal forma que tenhamos um que ainda esteja em cartaz e um que já tenha saído.
+```sh
+ALTER TABLE Movie
+CHANGE rating rating FLOAT;
 ```
 
 -------------------------------------------------------------------
