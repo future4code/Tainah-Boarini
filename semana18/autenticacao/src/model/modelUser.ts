@@ -11,3 +11,5 @@ export const insertUser = async (id: string, email: string, password: string): P
     }) 
     .into(userTableName)
 }
+
+
