@@ -3,6 +3,8 @@ import insertUser from "../data/insertUser";
 import { generate } from "../service/idGenerator";
 import { generateToken } from "../service/authenticator";
 import { generateHash } from "../service/hashManager";
+import { userInfo } from "os";
+import { user } from "../types/user";
 
 export default async function createUser(
     req: Request,
@@ -17,26 +19,31 @@ export default async function createUser(
             !req.body.password
 
         ) {
-          throw new Error('Preencha os campos "name","nickname" e "email"')
+            throw new Error('Preencha os campos "name","nickname" e "email"')
         }
 
-        const cypherPassword: string = await generateHash(req.body.password) 
+        const cypherPassword: string = await generateHash(req.body.password)
 
         const id: string = generate();
 
-        await insertUser(
-            id,
-            req.body.name,
-            req.body.nickname,
-            cypherPassword,
-            req.body.email
-        );
+        const { name, nickname, password, email, role } = req.body
 
-        const token = generateToken(id);
+        const userTest: user = {
+            id,
+            name,
+            nickname,
+            password: cypherPassword,
+            email,
+            role
+        }
+
+        await insertUser(userTest);
+
+        const token = generateToken({ id, role: req.body.role });
 
         res
             .status(200)
-            .send({token});
+            .send({ token });
 
     } catch (error) {
         res.status(400).send({

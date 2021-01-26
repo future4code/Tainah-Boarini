@@ -2,6 +2,7 @@ import { compare } from "bcryptjs";
 import { Request, Response } from "express";
 import { getUserByEmail } from "../data/getUserByEmail";
 import { generateToken } from "../service/authenticator";
+import { USER_ROLES } from "../types/user";
 
 
 export async function login(req: Request, res: Response) {
@@ -10,14 +11,24 @@ export async function login(req: Request, res: Response) {
 
         const input: loginInput = {
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            role: req.body.role
+        }
+
+        const user = await getUserByEmail(input.email);
+
+        if(!input.role){
+            throw new Error(`Preencha o campo "role"`)
+        }
+
+        if(input.role !== user.role){
+            throw new Error(`Preencha o campo "role" corretamente`)
         }
 
         if (!input.email || !input.password) {
             throw new Error("Preencha o e-mail e senha corretamente!");
         }
 
-        const user = await getUserByEmail(input.email);
 
         if (!user) {
             throw new Error("User not found!");
@@ -30,7 +41,7 @@ export async function login(req: Request, res: Response) {
         }
 
 
-        const token = generateToken(user.id);
+        const token = generateToken({id:user.id, role: user.role});
         res.status(200).send({ token });
 
     } catch (error) {
@@ -42,5 +53,6 @@ export async function login(req: Request, res: Response) {
 
 export type loginInput = {
     email: string,
-    password: string
+    password: string,
+    role: USER_ROLES
 }

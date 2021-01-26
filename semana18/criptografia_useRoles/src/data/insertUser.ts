@@ -1,17 +1,15 @@
 import { connection } from "../index";
+import { user, USER_ROLES } from "../types/user";
 
-export default async function insertUser(
-    id: string,
-    name: string,
-    nickname: string,
-    password: string,
-    email: string
-) {
+export default async function insertUser(user: user) {
+    
     await connection.insert({
-        id,
-        name,
-        nickname,
-        password,
-        email
+        id: user.id,
+        name: user.name,
+        nickname: user.nickname,
+        password: user.password,
+        email: user.email,
+        role: user.role
+
     }).into('to_do_list_users')
 }
