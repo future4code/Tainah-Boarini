@@ -33,11 +33,9 @@
 * a. Para realizar os testes corretamente, qual deles você deve modificar primeiro? O cadastro ou o login? Justifique.
   * cadastro. O login vai comparar as senhas inseridas no cadastro com as do banco de dados.
 
-* b. Faça a alteração do primeiro endpoint
-
-* c. Faça a alteração do segundo endpoint
 
 * d. No exercício de ontem, nós criamos o endpoint user/profile. Também temos que modificar esse endpoint devido à adição da criptografia? Justifique.
+  * sim, porque temos que fazer a validação de comparação de senha digitada com a criptografada.
 
    
 ---
