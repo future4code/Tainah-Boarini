@@ -18,8 +18,8 @@ export const getAddresByCep = async (cep: string):Promise<address> => { //aqui a
 
             street: result.data.logradouro,
             neighbourhood: result.data.bairro,
-            city: result.data.cidade,
-            state: result.data.state
+            city: result.data.localidade,
+            state: result.data.uf
         }
 
         return addressApi

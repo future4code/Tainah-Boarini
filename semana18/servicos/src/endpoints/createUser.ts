@@ -24,6 +24,8 @@ export default async function createUser(
         
         const cypherPassword = await hash(req.body.password);
 
+        //----------- CEP, número e complemento
+
         await insertUser(
             id,
             req.body.name,

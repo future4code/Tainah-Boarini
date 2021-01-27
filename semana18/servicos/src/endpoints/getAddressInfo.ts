@@ -12,7 +12,7 @@ export const getAddressInfo = async (req: Request, res: Response) => {
 
         const cep = req.params.cep
 
-        if(!cep || isNaN(Number(cep || cep.includes("." || "-")))) {
+        if(!cep || isNaN(Number(cep || cep.includes("." && "-")))) {
             throw new Error ("cep inválido")
         }
 
@@ -21,7 +21,7 @@ export const getAddressInfo = async (req: Request, res: Response) => {
 
         const resultAddress = await getAddresByCep(cep) // essa função leva pro service addressManager porque vai pegar uma informação externa 
 
-        res.status(200).send(`Sucesso na verificação do cep: ${resultAddress}`)
+        res.status(200).send({"Endereço da requisição": resultAddress})
 
 
     } catch (error) {
