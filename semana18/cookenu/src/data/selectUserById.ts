@@ -1,14 +1,14 @@
 import { dataBase } from "../dataBase";
 
 //------------------ querys que fazem a conexão com o banco de dados
-export const selectUserByEmail = async (email: string): Promise<any> => {
+export const selectUserById = async (id: string): Promise<any> => {
 
     try {
 
         const result = await dataBase
             .select("*")
             .from("cookenu_users")
-            .where({ email })
+            .where({ id })
 
             return result[0]
 

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { insertUser } from "../data/insertUser";
-import { user, USER_ROLES } from "../types/user";
+import { user } from "../types/user";
 import { generateToken } from "../utils/authenticator";
 import { hashPassword } from "../utils/hashPassword";
 import { generate } from "../utils/idGenerator";

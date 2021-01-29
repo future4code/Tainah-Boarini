@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
-import { loginInput, user } from "../types/user";
-import {selectUserByEmail} from "../data/selectUserById"
+import { user } from "../types/user";
+import {selectUserByEmail} from "../data/selectUserByEmail"
 import { compareHash } from "../utils/hashPassword";
 import { AuthenticationData } from "../types/authenticationData";
-import { userInfo } from "os";
 import { generateToken } from "../utils/authenticator";
 
 

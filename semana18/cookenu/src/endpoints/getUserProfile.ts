@@ -1,12 +1,7 @@
 import { Request, Response } from "express";
-import { insertUser } from "../data/insertUser";
-import { selectUserById } from "../data/selectUserByEmail copy";
-import { selectUserByEmail } from "../data/selectUserById";
-import { AuthenticationData } from "../types/authenticationData";
-import { user, USER_ROLES } from "../types/user";
-import { generateToken, getTokenData } from "../utils/authenticator";
-import { hashPassword } from "../utils/hashPassword";
-import { generate } from "../utils/idGenerator";
+import { selectUserById } from "../data/selectUserById";
+import { user } from "../types/user";
+import { getTokenData } from "../utils/authenticator";
 
 export const getUserProfile = async (req: Request, res: Response) => {
 
@@ -15,19 +10,23 @@ export const getUserProfile = async (req: Request, res: Response) => {
     try {
 
         //------------ diálogo com o postman (onde eu terei que copiar o token do login e colocar no Headres junto com a key authorization):
-        const token = req.headers.authorization!
+        const getUserId = req.params.id!
 
-        if (!token) {
+        if (!getUserId) {
             errorCode = 406
-            throw new Error("verifique o token")
+            throw new Error("preencha o id do usuário")
         }
 
-        const tokenIsCorrect: AuthenticationData = getTokenData(token)
+        const token = req.headers.authorization as string
+        const authData = getTokenData(token)
+        const userId: user = await selectUserById(authData.id)
 
-        const loginUser: user = await selectUserById(tokenIsCorrect.id)
+        if (!userId) {
+            errorCode = 404
+            throw new Error("Id incorreto. Verifique o id do usuário")
+        }
 
-
-        res.status(200).send({ id: loginUser.id, name: loginUser.name, email: loginUser.email })
+        res.status(200).send(userId)
 
 
     } catch (error) {
