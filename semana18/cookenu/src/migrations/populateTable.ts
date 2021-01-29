@@ -11,10 +11,10 @@ const populateCookenuUsers = async (): Promise<void> => {
             `);
 
         await dataBase.raw(`
-            INSERT INTO recipes(id, title, descripton)
+            INSERT INTO recipes(id, title, descripton, recipes_id)
             VALUES   
-            ('1', 'Suco verde da Bianca', 'Suco facilitador de aprendizado'),
-            ('2', 'chickenitos', 'melhor comida');
+            ('1', 'Suco verde da Bianca', 'Suco facilitador de aprendizado', 1),
+            ('2', 'chickenitos', 'melhor comida', 2);
             `);
 
         console.log("Tabela recipes e cookenu_users criadas com sucesso!")

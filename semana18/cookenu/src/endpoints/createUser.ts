@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { insertUser } from "../data/insertUser";
-import { user } from "../types/user";
+import { user, USER_ROLES } from "../types/user";
 import { generateToken } from "../utils/authenticator";
 import { hashPassword } from "../utils/hashPassword";
 import { generate } from "../utils/idGenerator";
 
-export const createAStudent = async (req: Request, res:Response) => {
+export const createUser = async (req: Request, res:Response) => {
 
     let errorCode: number = 400
 
@@ -18,10 +18,11 @@ export const createAStudent = async (req: Request, res:Response) => {
             throw new Error("preencha os campos obrigatórios de name, email e password corretamente")
         }
 
-        if(email.includes("@")){
+        if(!email.includes("@")){
             errorCode = 405 
             throw new Error("verifique se o e-mail é valido e possui um @")
         } 
+
 
         if(password.length < 6) {
             errorCode = 411 
@@ -36,16 +37,19 @@ export const createAStudent = async (req: Request, res:Response) => {
             name: name,
             email: email,
             password: hashManager,
-            role: role
+            role: role || 'APPRENTICE'
         }
 
         await insertUser(newUser)
-        const token = generateToken({id})
+        const token = generateToken({id, role})
 
         res.status(200).send({"Seu token de acesso: ": token})
 
 
     } catch (error) {        
+        if(error.message.includes("Data truncated for column 'role' at row 1")){
+            res.send("role deve ser 'APPRENTICE' ou 'CHEF'")
+        }
         res.status(errorCode).send(error.sqlMessage || error.message);
     };
 

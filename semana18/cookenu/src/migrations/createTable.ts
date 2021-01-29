@@ -18,7 +18,9 @@ const createTable = async (): Promise<void> => {
             id VARCHAR(64) PRIMARY KEY  NOT NULL,
             title VARCHAR(64) NOT NULL,
             descripton TEXT NOT NULL,
-            date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+            date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+            recipes_id VARCHAR(64) NULL,
+            FOREIGN KEY (recipes_id) REFERENCES cookenu_users(id)
             )`)
 
 

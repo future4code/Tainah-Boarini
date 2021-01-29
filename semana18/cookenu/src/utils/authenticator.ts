@@ -1,6 +1,8 @@
 import * as jwt from "jsonwebtoken";
 import { AuthenticationData } from "../types/authenticationData";
 
+
+//----------------payload sao as infos que eu quero guardar
 export const generateToken = (
     payload: AuthenticationData
 ): string => {
@@ -15,7 +17,7 @@ export const generateToken = (
 };
 
 export const getData = (token: string): AuthenticationData => {
-    const { id } = jwt.verify(token, process.env.JWT_KEY!) as AuthenticationData;
+    const { id, role } = jwt.verify(token, process.env.JWT_KEY!) as AuthenticationData;
 
-    return { id };
+    return { id, role };
 };

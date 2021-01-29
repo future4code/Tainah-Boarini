@@ -11,7 +11,7 @@ export const hashPassword = (password: string): string => {
     return hash;
 };
 
-export function compare(
+export function compareHash(
     plainText:string,
     cypherText:string
 
