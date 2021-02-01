@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cors())
 
 app.put('/signup', signup)
-app.post('/user/login', login)
+app.post('/login', login)
 
 app.put('/task', createTask)
 app.get('/task/:id', getTaskById)

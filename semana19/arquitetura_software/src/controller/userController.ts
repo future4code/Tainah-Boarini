@@ -10,12 +10,17 @@ export const login = async (
 
       const token = await businessLogin(email, password)
 
-      res.send({
+      res
+      .status(201)
+      .send({
          message: "Usuário logado!",
          token
       })
 
    } catch (error) {
+      if(error.message === "Cannot read property 'id' of undefined"){
+         res.send("Email não compatível")
+      }
       res.status(400).send(error.message)
    }
 }

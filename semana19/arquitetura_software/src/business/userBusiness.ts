@@ -58,7 +58,17 @@ export const businessLogin = async (
       throw new Error("'email' e 'senha' são obrigatórios")
    }
 
+   if(email.indexOf("@")=== -1){
+      throw new Error("Email incorreto")
+   }
+
+   if(password.length < 6){
+      throw new Error("A senha deve ter, no mínimo, 6 caracteres")
+   }
+
    const user: user = await selectUserByEmail(email)
+
+   const role = user.role
 
    if (!user) {
       throw new Error("Usuário não encontrado ou senha incorreta")
@@ -75,5 +85,5 @@ export const businessLogin = async (
       role: user.role
    })
 
-   return token
+   return ({token, role})
 }
