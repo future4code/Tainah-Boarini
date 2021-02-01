@@ -1,8 +1,8 @@
 import { compare, hash } from "./services/hashManager";
-import { insertUser, selectUserByEmail } from "../data/userDatabase";
-import { generateToken } from "./services/authenticator";
+import { insertUser, selectUserByEmail, selectUserById } from "../data/userDatabase";
+import { generateToken, getTokenData } from "./services/authenticator";
 import { generateId } from "./services/idGenerator";
-import { user, USER_ROLES } from "./entities/user";
+import { authenticationData, user, USER_ROLES } from "./entities/user";
 
 export const businessSignup = async (
    name: string,
@@ -86,4 +86,24 @@ export const businessLogin = async (
    })
 
    return ({token, role})
+}
+export const businessGetAllUsers = async (
+  token: string,
+  id: string
+
+) => {
+
+   if (!token) {
+      throw new Error("Acesso não autorizado. Verifique seu token")
+   }
+
+   const verifyToken: authenticationData = getTokenData(token)
+
+   if(!verifyToken){
+      throw new Error("Usuário não autorizado. Token inválido")
+   }
+
+   const getAllUsers = selectUserById(id)
+   
+   return ({getAllUsers})
 }

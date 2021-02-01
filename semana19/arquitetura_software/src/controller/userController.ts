@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
-import { businessLogin, businessSignup } from "../business/userBusiness";
+import { authenticationData } from "../business/entities/user";
+import { getTokenData } from "../business/services/authenticator";
+import { businessGetAllUsers, businessLogin, businessSignup } from "../business/userBusiness";
 
 export const login = async (
    req: Request,
@@ -45,6 +47,29 @@ export const signup = async (
             message: "Usuário criado!",
             token
          })
+
+   } catch (error) {
+      if(error.message === "Data truncated for column 'role' at row 1"){
+         res.send("role deve estar como NORMAL ou ADMIN")
+      }
+      res.status(400).send(error.message).end()
+   }
+
+}
+
+export const getAllUsers = async (
+   req: Request,
+   res: Response
+) => {
+   try {
+
+      const token = req.headers.authorization!
+      const id = req.body.id
+
+      const getAllUsers = await businessGetAllUsers(token, id)
+
+      res.status(200).send({message:"Todos os usuários: ",getAllUsers})     
+
 
    } catch (error) {
       if(error.message === "Data truncated for column 'role' at row 1"){

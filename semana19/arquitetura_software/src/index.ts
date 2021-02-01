@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { signup, login } from './controller/userController'
+import { signup, login, businessGetAllUsers } from './controller/userController'
 import { createTask,getTaskById } from './controller/taskController'
 
 const app = express()
@@ -9,6 +9,7 @@ app.use(cors())
 
 app.put('/signup', signup)
 app.post('/login', login)
+app.get('/all', businessGetAllUsers)
 
 app.put('/task', createTask)
 app.get('/task/:id', getTaskById)
