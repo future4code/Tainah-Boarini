@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import { authenticationData } from "../business/entities/user";
-import { getTokenData } from "../business/services/authenticator";
+import { user } from "../business/entities/user";
 import { businessGetAllUsers, businessLogin, businessSignup } from "../business/userBusiness";
 
 export const login = async (
@@ -64,9 +63,8 @@ export const getAllUsers = async (
    try {
 
       const token = req.headers.authorization!
-      const id = req.body.id
 
-      const getAllUsers = await businessGetAllUsers(token, id)
+      const getAllUsers = await businessGetAllUsers(token)
 
       res.status(200).send({message:"Todos os usuários: ",getAllUsers})     
 
@@ -75,7 +73,7 @@ export const getAllUsers = async (
       if(error.message === "Data truncated for column 'role' at row 1"){
          res.send("role deve estar como NORMAL ou ADMIN")
       }
-      res.status(400).send(error.message).end()
+      res.status(400).send(error.message)
    }
 
 }

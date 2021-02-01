@@ -41,20 +41,20 @@ export const selectUserByEmail = async (
    }
 }
 
-export const selectUserById = async (id: string): Promise<any[]> => {
+export const selectAllUsers = async (): Promise<any> => {
    try {
 
-      const users: any = []
+      // const users: any = []
       
       const result = await connection("to_do_list_users")
          .select("*")
-         .where({ id })
+         .from("to_do_list_users")
 
-         for(let user of result){
-            users.push(user)
-         }
+         // for(let user of result){
+         //    users.push(user)
+         // }
 
-      return users 
+      return result 
 
    } catch (error) {
       throw new Error(error.slqMessage || error.message)

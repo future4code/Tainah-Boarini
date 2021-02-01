@@ -15,3 +15,5 @@ export type user = {
    password: string,
    role: USER_ROLES
 }
+
+export let allUsers: Array<user> = []

@@ -1,5 +1,5 @@
 import { compare, hash } from "./services/hashManager";
-import { insertUser, selectUserByEmail, selectUserById } from "../data/userDatabase";
+import { insertUser, selectAllUsers, selectUserByEmail } from "../data/userDatabase";
 import { generateToken, getTokenData } from "./services/authenticator";
 import { generateId } from "./services/idGenerator";
 import { authenticationData, user, USER_ROLES } from "./entities/user";
@@ -89,7 +89,6 @@ export const businessLogin = async (
 }
 export const businessGetAllUsers = async (
   token: string,
-  id: string
 
 ) => {
 
@@ -103,7 +102,7 @@ export const businessGetAllUsers = async (
       throw new Error("Usuário não autorizado. Token inválido")
    }
 
-   const getAllUsers = selectUserById(id)
+   const getAllUsers = await selectAllUsers()
    
-   return ({getAllUsers})
+   return (getAllUsers)
 }
