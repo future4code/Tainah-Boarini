@@ -2,7 +2,7 @@ import { compare, hash } from "./services/hashManager";
 import { insertUser, selectUserByEmail } from "../data/userDatabase";
 import { generateToken } from "./services/authenticator";
 import { generateId } from "./services/idGenerator";
-import { signupInputDTO, user, USER_ROLES } from "./entities/user";
+import {  user } from "./entities/user";
 import { convertStringToUserRole } from "../data/model/userModel";
 
 export const businessSignup = async (
