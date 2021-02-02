@@ -19,3 +19,13 @@ export type user = {
    role: USER_ROLES
 }
 
+// export type signupInput = {
+//    name: string,
+//    nickname: string,
+//    email: string,
+//    password: string,
+//    role: USER_ROLES
+// }
+
+// -------- Posso substituir o export type por: Omit<user, "id">
+

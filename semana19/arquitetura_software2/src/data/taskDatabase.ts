@@ -18,7 +18,7 @@ export const insertTask = async (
    task: task
 ) => {
    await connection('to_do_list_tasks')
-      .insert({
+      .insert({ 
          id: task.id,
          title: task.title,
          description: task.description,
