@@ -26,10 +26,18 @@ export const businessCreatePost = async (photo: string , description: string, ty
     })
 }
 
-export const getAllPosts = async (id: string) => {
+export const businessGetPostsById = async (id: string) => {
+
+
     if(!id){
         throw new Error("verify id")
     }
 
-    await selectPostById(id)
+    const post: post = await selectPostById(id)
+
+    if (!post){
+        throw new Error("Post not found")
+    }
+
+    return post
 }

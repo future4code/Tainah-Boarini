@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
-import { businessCreatePost } from "../business/postBusiness";
+import { outputPost, post } from "../business/entities/post";
+import { businessCreatePost, businessGetPostsById } from "../business/postBusiness";
 
 export const createPost = async (req: Request, res: Response) => {
 
@@ -17,7 +18,6 @@ export const createPost = async (req: Request, res: Response) => {
             token
         )
 
-
         res.status(201).send({ message })
 
     } catch (error) {
@@ -29,15 +29,20 @@ export const createPost = async (req: Request, res: Response) => {
 
 }
 
-export const getPost = async (req: Request, res: Response) => {
+export const getAllPosts = async (req: Request, res: Response) => {
 
     try {
 
-        let message = "Success!"
-
         const { id } = req.params
 
-        await 
+        const post: post = await businessGetPostsById(id)
+
+        const result: outputPost = {
+            photo: post.photo,
+            description: post.description
+        }
+
+        res.status(200).send({ result })
 
     } catch (error) {
         let message = error.sqlMessage || error.message

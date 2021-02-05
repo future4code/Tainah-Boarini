@@ -15,11 +15,12 @@ export const selectPostById = async (
 
     try {
 
-        const result: any = await connection("labook_posts")
+        const result: any = await connection
             .select("*")
+            .into("labook_posts")
             .where({ id })
 
-        return result
+        return result[0]
 
     } catch (error) {
 
