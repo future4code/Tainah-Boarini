@@ -1,12 +1,11 @@
 import { post } from "../business/entities/post"
-import { user } from "../business/entities/user"
 import { connection } from "./model/connection"
 
 export const insertPost = async (
     post: post
 ) => {
     await connection("labook_posts")
-         .insert({post})
+        .insert(post)
 }
 
 
@@ -17,8 +16,8 @@ export const selectPostById = async (
     try {
 
         const result: any = await connection("labook_posts")
-        .select("*")
-        .where({ id })
+            .select("*")
+            .where({ id })
 
         return result
 

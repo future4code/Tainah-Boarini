@@ -16,12 +16,13 @@ export const selectUserByEmail = async (
 
     try {
 
-        const result: any = await connection("labook_users") // ---------- pergunta: pq se eu nao colocar any eu tenho que colocar return result[0]??
-        
+        const result: any = await connection
+
             .select("*")
+            .into("labook_users")
             .where({ email })
 
-        return result
+        return result[0]
 
     } catch (error) {
 

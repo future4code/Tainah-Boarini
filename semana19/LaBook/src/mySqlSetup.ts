@@ -1,4 +1,4 @@
-import {connection} from "./index"
+import { connection } from "./data/model/connection"
 
 async function createTables(){
    try {

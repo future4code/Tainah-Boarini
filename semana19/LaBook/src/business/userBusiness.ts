@@ -8,14 +8,13 @@ export const businessSignup = async (
     input: signupInputDTO
 ) => {
 
-    let statusCode: number
+    // let statusCode: number
 
     if (
         !input.name ||
         !input.email ||
         !input.password
     ) {
-        statusCode = 406
         throw new Error('"name", "email" and "password" must be provided')
     }
 
@@ -33,25 +32,28 @@ export const businessSignup = async (
 
 }
 
-export const businessLogin = async (email: string,
-    password: string) => {
+export const businessLogin = async (
+    email: string,
+    password: string
+) => {
 
-    const queryResult = await selectUserByEmail(email)
 
     if (!email || !password) {
-        res.statusCode = 406
-        message = '"email" and "password" must be provided'
-        throw new Error(message)
+        throw new Error('"email" and "password" must be provided')
     }
+
+    const queryResult: user = await selectUserByEmail(email)
 
     if (!queryResult) {
-        res.statusCode = 401
-        message = "Invalid credentials"
-        throw new Error(message)
+        throw new Error("Invalid credentials")
     }
 
 
-    const passwordIsCorrect: boolean = await compare(password, queryResult.password)
+    const passwordIsCorrect: boolean = await compare
+        (
+            password,
+            queryResult.password
+        )
 
     if (!passwordIsCorrect) {
         throw new Error("Invalid credentials")
