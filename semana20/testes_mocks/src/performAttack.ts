@@ -1,5 +1,4 @@
 import { Character } from "./interface"
-import { validateCharacter } from "./validateCharacter"
 
 // ------------------ função de validação diretamente na implementação
 
