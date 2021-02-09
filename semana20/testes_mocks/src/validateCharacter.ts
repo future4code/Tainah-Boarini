@@ -5,15 +5,6 @@ export const validateCharacter = (input: Character) => {
 
     const lifeResult = input.strength - input.defense
 
-    const character = {
-        name: input.name,
-        life: input.life,
-        defense: lifeResult,
-        strength: input.strength
-    }
-
-    const updateCharacter = { ...character }
-
 
     if (lifeResult <= 0
         || input.life <= 0
@@ -28,11 +19,11 @@ export const validateCharacter = (input: Character) => {
         input.life === undefined ||
         input.defense === undefined ||
         input.strength === undefined ||
-        input.name === undefined
+        input.name === ""
     ) {
         return false
     }
 
-    return updateCharacter
+    return true
 
 }
