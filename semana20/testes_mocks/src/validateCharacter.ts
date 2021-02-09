@@ -2,10 +2,6 @@ import { Character } from "./interface";
 
 export const validateCharacter = (input: Character) => {
 
-
-    const lifeResult = input.strength - input.defense
-
-
     if (lifeResult <= 0
         || input.life <= 0
         || input.defense <= 0

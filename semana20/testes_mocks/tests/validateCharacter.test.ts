@@ -33,7 +33,7 @@ describe("Testing validateCharacter", () => {
         const output = validateCharacter(input)
 
         expect(output).toBe(false)
-        // expect(output).toEqual(0)
+        // expect(input.life).toEqual(0)
 
     })
 
@@ -105,3 +105,4 @@ describe("Testing validateCharacter", () => {
 
     })
 })
+
