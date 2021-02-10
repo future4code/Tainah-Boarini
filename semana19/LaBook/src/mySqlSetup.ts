@@ -1,4 +1,6 @@
+
 import { connection } from "./data/model/connection"
+
 
 async function createTables(){
    try {
