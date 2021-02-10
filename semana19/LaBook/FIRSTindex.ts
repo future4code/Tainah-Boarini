@@ -2,13 +2,6 @@
 
 import express, { Express, Request, Response } from "express"
 import cors from "cors"
-
-import { userRouter } from "./controller/routes/userRouter"
-import { postRouter } from "./controller/routes/postRouter"
-
-/**************************** CONFIG ******************************/
-
-
 import knex from "knex"
 import dotenv from "dotenv"
 import * as jwt from "jsonwebtoken"
@@ -31,15 +24,9 @@ export const connection: Knex = knex({
    }
 })
 
-
 const app: Express = express()
 app.use(express.json())
 app.use(cors())
-
-
-app.use("/user", userRouter)
-app.use("/posts", postRouter)
-
 
 /**************************** TYPES ******************************/
 
@@ -262,7 +249,6 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
       res.send({ message })
    }
 })
-
 
 /**************************** SERVER INIT ******************************/
 
