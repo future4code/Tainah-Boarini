@@ -14,7 +14,6 @@ const checkIfOneEdit = (inputA, inputB) => {
     if (inputA.length > inputB.length) return inputA.includes(inputB) //removi do B
     if (inputB.length > inputA.length) return inputB.includes(inputA) //adicionei no B
 
-    
 }
 
 console.log(checkIfOneEdit("banana", "bananaa"))
