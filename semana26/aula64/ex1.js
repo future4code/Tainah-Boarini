@@ -21,4 +21,4 @@ const checkIfOneEdit = (inputA, inputB) => {
     } // se os inputs forem diferentes, só pode ter uma letra de diferença
     return charDifferent === 1;
 };
-console.log(checkIfOneEdit("banana", "bananaa"));
+console.log(checkIfOneEdit("banana", "bananaaa"));

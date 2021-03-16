@@ -31,4 +31,4 @@ const checkIfOneEdit = (inputA: string, inputB: string) => {
     return charDifferent === 1
 }
 
-console.log(checkIfOneEdit("banana", "bananaa"))
+console.log(checkIfOneEdit("banana", "bananaaa"))
