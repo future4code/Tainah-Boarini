@@ -5,88 +5,30 @@
 // mais de uma ação | bananaaa = false
 // mais de uma ação | bnanak = false
 
-const checkIfOneEdit = (inputA, inputB) => {
+const checkIfOneEdit = (inputA: string, inputB: string) => {
 
-    if(inputA.length - inputB.length > 1) {
+    if (Math.abs(inputA.length - inputB.length) > 1) {
         return false
     } // garante que nao vai add mais que uma string e nem deletar mais que uma string
 
-    if (inputA.length > inputB.length) return inputA.includes(inputB) //removi do B
-    if (inputB.length > inputA.length) return inputB.includes(inputA) //adicionei no B
+    if (inputA.length > inputB.length) {
+        return inputA.includes(inputB) //remover 1 letra do B, o input A deve conter o B
+    }
 
-    
+    if (inputB.length > inputA.length) {
+        return inputB.includes(inputA) //adicionar 1 letra do B, o input B deve conter o A
+    }
+
+    let charDifferent = 0
+
+    for (let i = 0; i < inputA.length; i++) {
+
+        if (inputA[i] !== inputB[i]) 
+        return charDifferent++
+
+    } // se os inputs forem diferentes, só pode ter uma letra de diferença
+
+    return charDifferent === 1
 }
 
-console.log(checkIfOneEdit("banana", "bananaa"))
-
-// ADICIONAR 1 CARACTERE
-
-// for (let item = 0; item < inputA.length; item++) {
-//     if (inputA.length === inputB.length + 1) {
-//         return true
-//     } else {
-//         return false
-//     }
-// }
-
-
-
-
-// const checkIfOneEdit = (inputA: any, inputB: any): boolean => {
-
-//     let hashInputA = {}
-//     let hashInputB = {}
-
-//     for (let i of inputA) {
-
-//         if (hashInputA[i]) {
-//             hashInputA[i] += 1
-//         }
-//         else {
-//             hashInputA[i] = 1
-//         }
-//     }
-//     console.log("hashInputA", hashInputA);
-
-//     for (let i of inputB) {
-
-//         if (hashInputB[i]) {
-//             hashInputB[i] += 1
-//         }
-//         else {
-//             hashInputB[i] = 1
-//         }
-//     }
-//     console.log("hashInputB",hashInputB);
-
-//     for (let key in hashInputA) {
-//         // if (hashInputA[key] > hashInputB[key]) {
-//         //     return true
-//         // } //Deletando
-
-//         if (hashInputA !== hashInputB) {
-//             return false;
-//         }
-//     }
-
-//     return true
-
-// }
-
-
-// ----------------------
-
-// for (let item = 0; item < inputA.length; item++) {
-        
-//     if (inputA.length - 1 === inputB.length) {
-//         return true
-
-//     } else if
-//     (inputA.length === inputB.length + 1) {
-//         return true
-        
-//     } else {
-//         return false
-//     }
-// }
-// }
+console.log(checkIfOneEdit("banana", "bananaaa"))
