@@ -22,15 +22,20 @@ export const findMissingNumber = (array) => {
 
 //-------------- testando outras possibilidades:
 
+function compareNum(a, b) {
+    return a - b;
+}
+
 const missingNum = (array) => {
-    const orderArray = array.sort();
+    const orderArray = array.sort(compareNum);
+    console.log("sort", orderArray);
 
     const missingNumber = [];
 
-    for (let i = 0; i <= orderArray.length; i++) {
+    for (let i = 0; i <= orderArray.length - 1; i++) {
         const nextElement = i + 1;
 
-        if (orderArray[i] !== orderArray[nextElement] + 1) {
+        if (orderArray[i] + 1 !== orderArray[nextElement]) {
             missingNumber.push(orderArray[i] + 1);
         } else {
             console.log("isn't missing number on array");
@@ -38,6 +43,6 @@ const missingNum = (array) => {
 
         return missingNumber;
     }
-}
+};
 
-console.log(missingNum([2, 3, 4, 6]));
+console.log(missingNum([9, 30, 4, 6]));
